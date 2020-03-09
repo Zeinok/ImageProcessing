@@ -12,7 +12,7 @@ namespace ImageProcessingBasics
 {
     class Graph
     {
-        public static Bitmap[] getRGBGraph(Bitmap bmp)
+        public static Bitmap[] GetRGBGraph(Bitmap bmp)
         {
             Bitmap[] retBmp = new Bitmap[3]; // init bmp
             for (int i = 0; i < retBmp.Length; i++)

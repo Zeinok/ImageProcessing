@@ -102,6 +102,8 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelInImgSize = new System.Windows.Forms.Label();
+            this.labelOutImgSize = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBoxIn.SuspendLayout();
@@ -155,6 +157,7 @@
             // 
             // groupBoxIn
             // 
+            this.groupBoxIn.Controls.Add(this.labelInImgSize);
             this.groupBoxIn.Controls.Add(this.pictureBoxInB);
             this.groupBoxIn.Controls.Add(this.pictureBoxInG);
             this.groupBoxIn.Controls.Add(this.pictureBoxInR);
@@ -201,6 +204,7 @@
             // 
             // groupBoxOut
             // 
+            this.groupBoxOut.Controls.Add(this.labelOutImgSize);
             this.groupBoxOut.Controls.Add(this.pictureBoxOutB);
             this.groupBoxOut.Controls.Add(this.pictureBoxOutG);
             this.groupBoxOut.Controls.Add(this.pictureBoxOutR);
@@ -826,27 +830,47 @@
             this.toolStripDropDownButtonFile.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonFile.Image")));
             this.toolStripDropDownButtonFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonFile.Name = "toolStripDropDownButtonFile";
-            this.toolStripDropDownButtonFile.Size = new System.Drawing.Size(39, 22);
-            this.toolStripDropDownButtonFile.Text = "&File";
+            this.toolStripDropDownButtonFile.Size = new System.Drawing.Size(56, 22);
+            this.toolStripDropDownButtonFile.Text = "&File (F)";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.Text = "&Open (O)";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Text = "&Save (S)";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveAsToolStripMenuItem.Text = "&Save As";
+            this.saveAsToolStripMenuItem.Text = "Save &As (A)";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // labelInImgSize
+            // 
+            this.labelInImgSize.AutoSize = true;
+            this.labelInImgSize.Location = new System.Drawing.Point(264, 347);
+            this.labelInImgSize.Name = "labelInImgSize";
+            this.labelInImgSize.Size = new System.Drawing.Size(21, 12);
+            this.labelInImgSize.TabIndex = 4;
+            this.labelInImgSize.Text = "?x?";
+            // 
+            // labelOutImgSize
+            // 
+            this.labelOutImgSize.AutoSize = true;
+            this.labelOutImgSize.Location = new System.Drawing.Point(264, 347);
+            this.labelOutImgSize.Name = "labelOutImgSize";
+            this.labelOutImgSize.Size = new System.Drawing.Size(21, 12);
+            this.labelOutImgSize.TabIndex = 5;
+            this.labelOutImgSize.Text = "?x?";
             // 
             // Form1
             // 
@@ -860,14 +884,17 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBoxIn.ResumeLayout(false);
+            this.groupBoxIn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInR)).EndInit();
             this.groupBoxOut.ResumeLayout(false);
+            this.groupBoxOut.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutR)).EndInit();
@@ -975,6 +1002,8 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.Label labelInImgSize;
+        private System.Windows.Forms.Label labelOutImgSize;
     }
 }
 
