@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,10 +34,27 @@ namespace ImageProcessingBasics
             outputBitmap = (Bitmap)pictureBoxOut.Image;
             fs.Close();
             appendLog(String.Format("File {0} opened.", ofd.SafeFileName));
+            updateInputRGBGraph();
+            updateOutputRGBGraph();
+
+            GC.Collect();
         }
 
-        private void updateRGBGraph()
+        private void updateInputRGBGraph()
         {
+            Bitmap[] rgbGraph = Graph.getRGBGraph(inputBitmap);
+            pictureBoxInR.Image = rgbGraph[0];
+            pictureBoxInG.Image = rgbGraph[1];
+            pictureBoxInB.Image = rgbGraph[2];
+
+        }
+
+        private void updateOutputRGBGraph()
+        {
+            Bitmap[] rgbGraph = Graph.getRGBGraph(outputBitmap);
+            pictureBoxOutR.Image = rgbGraph[0];
+            pictureBoxOutG.Image = rgbGraph[1];
+            pictureBoxOutB.Image = rgbGraph[2];
 
         }
 

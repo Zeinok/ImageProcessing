@@ -168,25 +168,34 @@
             // 
             // pictureBoxInB
             // 
+            this.pictureBoxInB.BackColor = System.Drawing.Color.White;
+            this.pictureBoxInB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxInB.Location = new System.Drawing.Point(178, 347);
             this.pictureBoxInB.Name = "pictureBoxInB";
             this.pictureBoxInB.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxInB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxInB.TabIndex = 3;
             this.pictureBoxInB.TabStop = false;
             // 
             // pictureBoxInG
             // 
+            this.pictureBoxInG.BackColor = System.Drawing.Color.White;
+            this.pictureBoxInG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxInG.Location = new System.Drawing.Point(92, 347);
             this.pictureBoxInG.Name = "pictureBoxInG";
             this.pictureBoxInG.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxInG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxInG.TabIndex = 2;
             this.pictureBoxInG.TabStop = false;
             // 
             // pictureBoxInR
             // 
+            this.pictureBoxInR.BackColor = System.Drawing.Color.White;
+            this.pictureBoxInR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxInR.Location = new System.Drawing.Point(6, 347);
             this.pictureBoxInR.Name = "pictureBoxInR";
             this.pictureBoxInR.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxInR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxInR.TabIndex = 1;
             this.pictureBoxInR.TabStop = false;
             // 
@@ -205,25 +214,34 @@
             // 
             // pictureBoxOutB
             // 
+            this.pictureBoxOutB.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOutB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxOutB.Location = new System.Drawing.Point(178, 347);
             this.pictureBoxOutB.Name = "pictureBoxOutB";
             this.pictureBoxOutB.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxOutB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxOutB.TabIndex = 3;
             this.pictureBoxOutB.TabStop = false;
             // 
             // pictureBoxOutG
             // 
+            this.pictureBoxOutG.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOutG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxOutG.Location = new System.Drawing.Point(92, 347);
             this.pictureBoxOutG.Name = "pictureBoxOutG";
             this.pictureBoxOutG.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxOutG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxOutG.TabIndex = 2;
             this.pictureBoxOutG.TabStop = false;
             // 
             // pictureBoxOutR
             // 
+            this.pictureBoxOutR.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOutR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxOutR.Location = new System.Drawing.Point(6, 347);
             this.pictureBoxOutR.Name = "pictureBoxOutR";
             this.pictureBoxOutR.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxOutR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxOutR.TabIndex = 1;
             this.pictureBoxOutR.TabStop = false;
             // 
