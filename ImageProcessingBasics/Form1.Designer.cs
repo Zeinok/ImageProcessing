@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBoxIn = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -104,6 +105,10 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelInImgSize = new System.Windows.Forms.Label();
             this.labelOutImgSize = new System.Windows.Forms.Label();
+            this.toolStripDropDownButtonEdit = new System.Windows.Forms.ToolStripDropDownButton();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerGC = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBoxIn.SuspendLayout();
@@ -148,7 +153,8 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButtonFile});
+            this.toolStripDropDownButtonFile,
+            this.toolStripDropDownButtonEdit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1434, 25);
@@ -639,7 +645,7 @@
             // 
             // buttonTransformReverse
             // 
-            this.buttonTransformReverse.Location = new System.Drawing.Point(6, 50);
+            this.buttonTransformReverse.Location = new System.Drawing.Point(6, 69);
             this.buttonTransformReverse.Name = "buttonTransformReverse";
             this.buttonTransformReverse.Size = new System.Drawing.Size(75, 23);
             this.buttonTransformReverse.TabIndex = 1;
@@ -703,7 +709,7 @@
             // 
             // buttonTransformOrigin
             // 
-            this.buttonTransformOrigin.Location = new System.Drawing.Point(6, 21);
+            this.buttonTransformOrigin.Location = new System.Drawing.Point(6, 41);
             this.buttonTransformOrigin.Name = "buttonTransformOrigin";
             this.buttonTransformOrigin.Size = new System.Drawing.Size(75, 23);
             this.buttonTransformOrigin.TabIndex = 0;
@@ -831,27 +837,27 @@
             this.toolStripDropDownButtonFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonFile.Name = "toolStripDropDownButtonFile";
             this.toolStripDropDownButtonFile.Size = new System.Drawing.Size(56, 22);
-            this.toolStripDropDownButtonFile.Text = "&File (F)";
+            this.toolStripDropDownButtonFile.Text = "File (&F)";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openToolStripMenuItem.Text = "&Open (O)";
+            this.openToolStripMenuItem.Text = "Open (&O)";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem.Text = "&Save (S)";
+            this.saveToolStripMenuItem.Text = "Save (&S)";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveAsToolStripMenuItem.Text = "Save &As (A)";
+            this.saveAsToolStripMenuItem.Text = "Save As (&A)";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // labelInImgSize
@@ -872,6 +878,36 @@
             this.labelOutImgSize.TabIndex = 5;
             this.labelOutImgSize.Text = "?x?";
             // 
+            // toolStripDropDownButtonEdit
+            // 
+            this.toolStripDropDownButtonEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButtonEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.undoToolStripMenuItem,
+            this.redoToolStripMenuItem});
+            this.toolStripDropDownButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonEdit.Image")));
+            this.toolStripDropDownButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButtonEdit.Name = "toolStripDropDownButtonEdit";
+            this.toolStripDropDownButtonEdit.Size = new System.Drawing.Size(60, 22);
+            this.toolStripDropDownButtonEdit.Text = "Edit (&E)";
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.undoToolStripMenuItem.Text = "Undo";
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redoToolStripMenuItem.Text = "Redo";
+            // 
+            // timerGC
+            // 
+            this.timerGC.Enabled = true;
+            this.timerGC.Interval = 2000;
+            this.timerGC.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -883,7 +919,7 @@
             this.Controls.Add(this.groupBoxIn);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Image Processing";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -1004,6 +1040,10 @@
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.Label labelInImgSize;
         private System.Windows.Forms.Label labelOutImgSize;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonEdit;
+        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
+        private System.Windows.Forms.Timer timerGC;
     }
 }
 
