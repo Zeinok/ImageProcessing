@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBoxIn = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.groupBoxIn = new System.Windows.Forms.GroupBox();
             this.pictureBoxInB = new System.Windows.Forms.PictureBox();
             this.pictureBoxInG = new System.Windows.Forms.PictureBox();
@@ -100,6 +98,10 @@
             this.textBoxSegmentationK = new System.Windows.Forms.TextBox();
             this.textBoxIterationLevel = new System.Windows.Forms.TextBox();
             this.textBoxCompressionBits = new System.Windows.Forms.TextBox();
+            this.toolStripDropDownButtonFile = new System.Windows.Forms.ToolStripDropDownButton();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBoxIn.SuspendLayout();
@@ -137,39 +139,19 @@
             this.pictureBoxIn.Location = new System.Drawing.Point(6, 21);
             this.pictureBoxIn.Name = "pictureBoxIn";
             this.pictureBoxIn.Size = new System.Drawing.Size(320, 320);
+            this.pictureBoxIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIn.TabIndex = 0;
             this.pictureBoxIn.TabStop = false;
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonOpen,
-            this.toolStripButtonSave});
+            this.toolStripDropDownButtonFile});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1434, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButtonOpen
-            // 
-            this.toolStripButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonOpen.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonOpen.Image")));
-            this.toolStripButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonOpen.Name = "toolStripButtonOpen";
-            this.toolStripButtonOpen.Size = new System.Drawing.Size(43, 22);
-            this.toolStripButtonOpen.Text = "Open";
-            this.toolStripButtonOpen.ToolTipText = "Open";
-            // 
-            // toolStripButtonSave
-            // 
-            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
-            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(38, 22);
-            this.toolStripButtonSave.Text = "Save";
-            this.toolStripButtonSave.ToolTipText = "Save";
             // 
             // groupBoxIn
             // 
@@ -250,6 +232,7 @@
             this.pictureBoxOut.Location = new System.Drawing.Point(6, 21);
             this.pictureBoxOut.Name = "pictureBoxOut";
             this.pictureBoxOut.Size = new System.Drawing.Size(320, 320);
+            this.pictureBoxOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxOut.TabIndex = 0;
             this.pictureBoxOut.TabStop = false;
             // 
@@ -815,6 +798,38 @@
             this.textBoxCompressionBits.Size = new System.Drawing.Size(303, 22);
             this.textBoxCompressionBits.TabIndex = 7;
             // 
+            // toolStripDropDownButtonFile
+            // 
+            this.toolStripDropDownButtonFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButtonFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem});
+            this.toolStripDropDownButtonFile.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonFile.Image")));
+            this.toolStripDropDownButtonFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButtonFile.Name = "toolStripDropDownButtonFile";
+            this.toolStripDropDownButtonFile.Size = new System.Drawing.Size(39, 22);
+            this.toolStripDropDownButtonFile.Text = "&File";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "&Save";
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Text = "&Save As";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -871,8 +886,6 @@
 
         private System.Windows.Forms.PictureBox pictureBoxIn;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButtonOpen;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.GroupBox groupBoxIn;
         private System.Windows.Forms.PictureBox pictureBoxInB;
         private System.Windows.Forms.PictureBox pictureBoxInG;
@@ -940,6 +953,10 @@
         private System.Windows.Forms.TextBox textBoxCompressionBits;
         private System.Windows.Forms.TextBox textBoxIterationLevel;
         private System.Windows.Forms.TextBox textBoxSegmentationK;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonFile;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
     }
 }
 
