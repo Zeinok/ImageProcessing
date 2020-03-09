@@ -45,6 +45,18 @@
             this.groupBoxLog = new System.Windows.Forms.GroupBox();
             this.listBoxLog = new System.Windows.Forms.ListBox();
             this.groupBoxManipulation = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.groupBoxEncryption = new System.Windows.Forms.GroupBox();
+            this.textBoxEncryptionKey = new System.Windows.Forms.TextBox();
+            this.ButtonEncryptionClear = new System.Windows.Forms.Button();
+            this.ButtonEncryptionDecrypt = new System.Windows.Forms.Button();
+            this.buttonEncryptionEncrypt = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBoxMorphology = new System.Windows.Forms.GroupBox();
+            this.buttonMorphlogyClosing = new System.Windows.Forms.Button();
+            this.buttonMorphologyOpening = new System.Windows.Forms.Button();
+            this.buttonMorphologyDilation = new System.Windows.Forms.Button();
+            this.buttonMorphologyErosion = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBoxSpaceFiller = new System.Windows.Forms.GroupBox();
             this.buttonSpaceFillerKirsch = new System.Windows.Forms.Button();
@@ -76,18 +88,6 @@
             this.textBoxResizeX = new System.Windows.Forms.TextBox();
             this.labelResizeWidth = new System.Windows.Forms.Label();
             this.buttonTransformOrigin = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.groupBoxMorphology = new System.Windows.Forms.GroupBox();
-            this.buttonMorphologyOpening = new System.Windows.Forms.Button();
-            this.buttonMorphologyDilation = new System.Windows.Forms.Button();
-            this.buttonMorphologyErosion = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.groupBoxEncryption = new System.Windows.Forms.GroupBox();
-            this.buttonEncryptionEncrypt = new System.Windows.Forms.Button();
-            this.ButtonEncryptionDecrypt = new System.Windows.Forms.Button();
-            this.ButtonEncryptionClear = new System.Windows.Forms.Button();
-            this.textBoxEncryptionKey = new System.Windows.Forms.TextBox();
-            this.buttonMorphlogyClosing = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBoxIn.SuspendLayout();
@@ -101,6 +101,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOut)).BeginInit();
             this.groupBoxLog.SuspendLayout();
             this.groupBoxManipulation.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.groupBoxEncryption.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.groupBoxMorphology.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBoxSpaceFiller.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,10 +114,6 @@
             this.groupBoxThresholding.SuspendLayout();
             this.groupBoxGrayscale.SuspendLayout();
             this.groupBoxResize.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.groupBoxMorphology.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.groupBoxEncryption.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxIn
@@ -131,7 +131,7 @@
             this.toolStripButtonSave});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1384, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1434, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -269,10 +269,126 @@
             this.groupBoxManipulation.Controls.Add(this.buttonTransformOrigin);
             this.groupBoxManipulation.Location = new System.Drawing.Point(688, 28);
             this.groupBoxManipulation.Name = "groupBoxManipulation";
-            this.groupBoxManipulation.Size = new System.Drawing.Size(684, 721);
+            this.groupBoxManipulation.Size = new System.Drawing.Size(734, 721);
             this.groupBoxManipulation.TabIndex = 6;
             this.groupBoxManipulation.TabStop = false;
             this.groupBoxManipulation.Text = "Image Manipulations";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.Info;
+            this.panel5.Controls.Add(this.groupBoxEncryption);
+            this.panel5.Location = new System.Drawing.Point(6, 532);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(350, 117);
+            this.panel5.TabIndex = 6;
+            // 
+            // groupBoxEncryption
+            // 
+            this.groupBoxEncryption.Controls.Add(this.textBoxEncryptionKey);
+            this.groupBoxEncryption.Controls.Add(this.ButtonEncryptionClear);
+            this.groupBoxEncryption.Controls.Add(this.ButtonEncryptionDecrypt);
+            this.groupBoxEncryption.Controls.Add(this.buttonEncryptionEncrypt);
+            this.groupBoxEncryption.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxEncryption.Name = "groupBoxEncryption";
+            this.groupBoxEncryption.Size = new System.Drawing.Size(344, 110);
+            this.groupBoxEncryption.TabIndex = 0;
+            this.groupBoxEncryption.TabStop = false;
+            this.groupBoxEncryption.Text = "Encryption";
+            // 
+            // textBoxEncryptionKey
+            // 
+            this.textBoxEncryptionKey.Location = new System.Drawing.Point(6, 21);
+            this.textBoxEncryptionKey.Multiline = true;
+            this.textBoxEncryptionKey.Name = "textBoxEncryptionKey";
+            this.textBoxEncryptionKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxEncryptionKey.Size = new System.Drawing.Size(251, 81);
+            this.textBoxEncryptionKey.TabIndex = 3;
+            // 
+            // ButtonEncryptionClear
+            // 
+            this.ButtonEncryptionClear.Location = new System.Drawing.Point(263, 79);
+            this.ButtonEncryptionClear.Name = "ButtonEncryptionClear";
+            this.ButtonEncryptionClear.Size = new System.Drawing.Size(75, 23);
+            this.ButtonEncryptionClear.TabIndex = 2;
+            this.ButtonEncryptionClear.Text = "Clear";
+            this.ButtonEncryptionClear.UseVisualStyleBackColor = true;
+            // 
+            // ButtonEncryptionDecrypt
+            // 
+            this.ButtonEncryptionDecrypt.Location = new System.Drawing.Point(263, 50);
+            this.ButtonEncryptionDecrypt.Name = "ButtonEncryptionDecrypt";
+            this.ButtonEncryptionDecrypt.Size = new System.Drawing.Size(75, 23);
+            this.ButtonEncryptionDecrypt.TabIndex = 1;
+            this.ButtonEncryptionDecrypt.Text = "Decrypt";
+            this.ButtonEncryptionDecrypt.UseVisualStyleBackColor = true;
+            // 
+            // buttonEncryptionEncrypt
+            // 
+            this.buttonEncryptionEncrypt.Location = new System.Drawing.Point(263, 21);
+            this.buttonEncryptionEncrypt.Name = "buttonEncryptionEncrypt";
+            this.buttonEncryptionEncrypt.Size = new System.Drawing.Size(75, 23);
+            this.buttonEncryptionEncrypt.TabIndex = 0;
+            this.buttonEncryptionEncrypt.Text = "Encrypt";
+            this.buttonEncryptionEncrypt.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel4.Controls.Add(this.groupBoxMorphology);
+            this.panel4.Location = new System.Drawing.Point(6, 467);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(350, 59);
+            this.panel4.TabIndex = 5;
+            // 
+            // groupBoxMorphology
+            // 
+            this.groupBoxMorphology.Controls.Add(this.buttonMorphlogyClosing);
+            this.groupBoxMorphology.Controls.Add(this.buttonMorphologyOpening);
+            this.groupBoxMorphology.Controls.Add(this.buttonMorphologyDilation);
+            this.groupBoxMorphology.Controls.Add(this.buttonMorphologyErosion);
+            this.groupBoxMorphology.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxMorphology.Name = "groupBoxMorphology";
+            this.groupBoxMorphology.Size = new System.Drawing.Size(344, 52);
+            this.groupBoxMorphology.TabIndex = 0;
+            this.groupBoxMorphology.TabStop = false;
+            this.groupBoxMorphology.Text = "Morphology";
+            // 
+            // buttonMorphlogyClosing
+            // 
+            this.buttonMorphlogyClosing.Location = new System.Drawing.Point(249, 21);
+            this.buttonMorphlogyClosing.Name = "buttonMorphlogyClosing";
+            this.buttonMorphlogyClosing.Size = new System.Drawing.Size(75, 23);
+            this.buttonMorphlogyClosing.TabIndex = 4;
+            this.buttonMorphlogyClosing.Text = "Closing";
+            this.buttonMorphlogyClosing.UseVisualStyleBackColor = true;
+            // 
+            // buttonMorphologyOpening
+            // 
+            this.buttonMorphologyOpening.Location = new System.Drawing.Point(168, 21);
+            this.buttonMorphologyOpening.Name = "buttonMorphologyOpening";
+            this.buttonMorphologyOpening.Size = new System.Drawing.Size(75, 23);
+            this.buttonMorphologyOpening.TabIndex = 3;
+            this.buttonMorphologyOpening.Text = "Opening";
+            this.buttonMorphologyOpening.UseVisualStyleBackColor = true;
+            // 
+            // buttonMorphologyDilation
+            // 
+            this.buttonMorphologyDilation.Location = new System.Drawing.Point(87, 21);
+            this.buttonMorphologyDilation.Name = "buttonMorphologyDilation";
+            this.buttonMorphologyDilation.Size = new System.Drawing.Size(75, 23);
+            this.buttonMorphologyDilation.TabIndex = 2;
+            this.buttonMorphologyDilation.Text = "Dilation";
+            this.buttonMorphologyDilation.UseVisualStyleBackColor = true;
+            // 
+            // buttonMorphologyErosion
+            // 
+            this.buttonMorphologyErosion.Location = new System.Drawing.Point(6, 21);
+            this.buttonMorphologyErosion.Name = "buttonMorphologyErosion";
+            this.buttonMorphologyErosion.Size = new System.Drawing.Size(75, 23);
+            this.buttonMorphologyErosion.TabIndex = 1;
+            this.buttonMorphologyErosion.Text = "Erosion";
+            this.buttonMorphologyErosion.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -571,127 +687,11 @@
             this.buttonTransformOrigin.Text = "Origin";
             this.buttonTransformOrigin.UseVisualStyleBackColor = true;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panel4.Controls.Add(this.groupBoxMorphology);
-            this.panel4.Location = new System.Drawing.Point(6, 467);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(350, 59);
-            this.panel4.TabIndex = 5;
-            // 
-            // groupBoxMorphology
-            // 
-            this.groupBoxMorphology.Controls.Add(this.buttonMorphlogyClosing);
-            this.groupBoxMorphology.Controls.Add(this.buttonMorphologyOpening);
-            this.groupBoxMorphology.Controls.Add(this.buttonMorphologyDilation);
-            this.groupBoxMorphology.Controls.Add(this.buttonMorphologyErosion);
-            this.groupBoxMorphology.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxMorphology.Name = "groupBoxMorphology";
-            this.groupBoxMorphology.Size = new System.Drawing.Size(344, 52);
-            this.groupBoxMorphology.TabIndex = 0;
-            this.groupBoxMorphology.TabStop = false;
-            this.groupBoxMorphology.Text = "Morphology";
-            // 
-            // buttonMorphologyOpening
-            // 
-            this.buttonMorphologyOpening.Location = new System.Drawing.Point(168, 21);
-            this.buttonMorphologyOpening.Name = "buttonMorphologyOpening";
-            this.buttonMorphologyOpening.Size = new System.Drawing.Size(75, 23);
-            this.buttonMorphologyOpening.TabIndex = 3;
-            this.buttonMorphologyOpening.Text = "Opening";
-            this.buttonMorphologyOpening.UseVisualStyleBackColor = true;
-            // 
-            // buttonMorphologyDilation
-            // 
-            this.buttonMorphologyDilation.Location = new System.Drawing.Point(87, 21);
-            this.buttonMorphologyDilation.Name = "buttonMorphologyDilation";
-            this.buttonMorphologyDilation.Size = new System.Drawing.Size(75, 23);
-            this.buttonMorphologyDilation.TabIndex = 2;
-            this.buttonMorphologyDilation.Text = "Dilation";
-            this.buttonMorphologyDilation.UseVisualStyleBackColor = true;
-            // 
-            // buttonMorphologyErosion
-            // 
-            this.buttonMorphologyErosion.Location = new System.Drawing.Point(6, 21);
-            this.buttonMorphologyErosion.Name = "buttonMorphologyErosion";
-            this.buttonMorphologyErosion.Size = new System.Drawing.Size(75, 23);
-            this.buttonMorphologyErosion.TabIndex = 1;
-            this.buttonMorphologyErosion.Text = "Erosion";
-            this.buttonMorphologyErosion.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.Info;
-            this.panel5.Controls.Add(this.groupBoxEncryption);
-            this.panel5.Location = new System.Drawing.Point(6, 532);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 117);
-            this.panel5.TabIndex = 6;
-            // 
-            // groupBoxEncryption
-            // 
-            this.groupBoxEncryption.Controls.Add(this.textBoxEncryptionKey);
-            this.groupBoxEncryption.Controls.Add(this.ButtonEncryptionClear);
-            this.groupBoxEncryption.Controls.Add(this.ButtonEncryptionDecrypt);
-            this.groupBoxEncryption.Controls.Add(this.buttonEncryptionEncrypt);
-            this.groupBoxEncryption.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxEncryption.Name = "groupBoxEncryption";
-            this.groupBoxEncryption.Size = new System.Drawing.Size(344, 110);
-            this.groupBoxEncryption.TabIndex = 0;
-            this.groupBoxEncryption.TabStop = false;
-            this.groupBoxEncryption.Text = "Encryption";
-            // 
-            // buttonEncryptionEncrypt
-            // 
-            this.buttonEncryptionEncrypt.Location = new System.Drawing.Point(263, 21);
-            this.buttonEncryptionEncrypt.Name = "buttonEncryptionEncrypt";
-            this.buttonEncryptionEncrypt.Size = new System.Drawing.Size(75, 23);
-            this.buttonEncryptionEncrypt.TabIndex = 0;
-            this.buttonEncryptionEncrypt.Text = "Encrypt";
-            this.buttonEncryptionEncrypt.UseVisualStyleBackColor = true;
-            // 
-            // ButtonEncryptionDecrypt
-            // 
-            this.ButtonEncryptionDecrypt.Location = new System.Drawing.Point(263, 50);
-            this.ButtonEncryptionDecrypt.Name = "ButtonEncryptionDecrypt";
-            this.ButtonEncryptionDecrypt.Size = new System.Drawing.Size(75, 23);
-            this.ButtonEncryptionDecrypt.TabIndex = 1;
-            this.ButtonEncryptionDecrypt.Text = "Decrypt";
-            this.ButtonEncryptionDecrypt.UseVisualStyleBackColor = true;
-            // 
-            // ButtonEncryptionClear
-            // 
-            this.ButtonEncryptionClear.Location = new System.Drawing.Point(263, 79);
-            this.ButtonEncryptionClear.Name = "ButtonEncryptionClear";
-            this.ButtonEncryptionClear.Size = new System.Drawing.Size(75, 23);
-            this.ButtonEncryptionClear.TabIndex = 2;
-            this.ButtonEncryptionClear.Text = "Clear";
-            this.ButtonEncryptionClear.UseVisualStyleBackColor = true;
-            // 
-            // textBoxEncryptionKey
-            // 
-            this.textBoxEncryptionKey.Location = new System.Drawing.Point(6, 21);
-            this.textBoxEncryptionKey.Multiline = true;
-            this.textBoxEncryptionKey.Name = "textBoxEncryptionKey";
-            this.textBoxEncryptionKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxEncryptionKey.Size = new System.Drawing.Size(251, 81);
-            this.textBoxEncryptionKey.TabIndex = 3;
-            // 
-            // buttonMorphlogyClosing
-            // 
-            this.buttonMorphlogyClosing.Location = new System.Drawing.Point(249, 21);
-            this.buttonMorphlogyClosing.Name = "buttonMorphlogyClosing";
-            this.buttonMorphlogyClosing.Size = new System.Drawing.Size(75, 23);
-            this.buttonMorphlogyClosing.TabIndex = 4;
-            this.buttonMorphlogyClosing.Text = "Closing";
-            this.buttonMorphlogyClosing.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 761);
+            this.ClientSize = new System.Drawing.Size(1434, 761);
             this.Controls.Add(this.groupBoxManipulation);
             this.Controls.Add(this.groupBoxLog);
             this.Controls.Add(this.groupBoxOut);
@@ -713,6 +713,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOut)).EndInit();
             this.groupBoxLog.ResumeLayout(false);
             this.groupBoxManipulation.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.groupBoxEncryption.ResumeLayout(false);
+            this.groupBoxEncryption.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.groupBoxMorphology.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.groupBoxSpaceFiller.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -723,11 +728,6 @@
             this.groupBoxGrayscale.ResumeLayout(false);
             this.groupBoxResize.ResumeLayout(false);
             this.groupBoxResize.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.groupBoxMorphology.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.groupBoxEncryption.ResumeLayout(false);
-            this.groupBoxEncryption.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
