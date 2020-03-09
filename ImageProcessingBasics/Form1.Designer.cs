@@ -88,6 +88,18 @@
             this.textBoxResizeX = new System.Windows.Forms.TextBox();
             this.labelResizeWidth = new System.Windows.Forms.Label();
             this.buttonTransformOrigin = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.groupBoxSegmentation = new System.Windows.Forms.GroupBox();
+            this.buttonSegmentationKmeans = new System.Windows.Forms.Button();
+            this.labelSegmentationK = new System.Windows.Forms.Label();
+            this.labelSegmentationIterationLevel = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.groupBoxCompression = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.labelCompressionBits = new System.Windows.Forms.Label();
+            this.textBoxSegmentationK = new System.Windows.Forms.TextBox();
+            this.textBoxIterationLevel = new System.Windows.Forms.TextBox();
+            this.textBoxCompressionBits = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBoxIn.SuspendLayout();
@@ -114,6 +126,10 @@
             this.groupBoxThresholding.SuspendLayout();
             this.groupBoxGrayscale.SuspendLayout();
             this.groupBoxResize.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.groupBoxSegmentation.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.groupBoxCompression.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxIn
@@ -259,6 +275,8 @@
             // 
             // groupBoxManipulation
             // 
+            this.groupBoxManipulation.Controls.Add(this.panel7);
+            this.groupBoxManipulation.Controls.Add(this.panel6);
             this.groupBoxManipulation.Controls.Add(this.panel5);
             this.groupBoxManipulation.Controls.Add(this.panel4);
             this.groupBoxManipulation.Controls.Add(this.panel3);
@@ -278,7 +296,7 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Info;
             this.panel5.Controls.Add(this.groupBoxEncryption);
-            this.panel5.Location = new System.Drawing.Point(6, 532);
+            this.panel5.Location = new System.Drawing.Point(6, 542);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(350, 117);
             this.panel5.TabIndex = 6;
@@ -336,7 +354,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel4.Controls.Add(this.groupBoxMorphology);
-            this.panel4.Location = new System.Drawing.Point(6, 467);
+            this.panel4.Location = new System.Drawing.Point(6, 477);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(350, 59);
             this.panel4.TabIndex = 5;
@@ -394,7 +412,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Info;
             this.panel3.Controls.Add(this.groupBoxSpaceFiller);
-            this.panel3.Location = new System.Drawing.Point(6, 372);
+            this.panel3.Location = new System.Drawing.Point(6, 382);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(350, 87);
             this.panel3.TabIndex = 5;
@@ -462,7 +480,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel2.Controls.Add(this.groupBoxContrast);
-            this.panel2.Location = new System.Drawing.Point(6, 279);
+            this.panel2.Location = new System.Drawing.Point(6, 289);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 87);
             this.panel2.TabIndex = 4;
@@ -524,14 +542,14 @@
             this.panel1.Controls.Add(this.groupBoxGrayscale);
             this.panel1.Location = new System.Drawing.Point(6, 107);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 166);
+            this.panel1.Size = new System.Drawing.Size(350, 176);
             this.panel1.TabIndex = 3;
             // 
             // groupBoxBrightness
             // 
             this.groupBoxBrightness.Controls.Add(this.buttonBrightnessDarken);
             this.groupBoxBrightness.Controls.Add(this.buttonBrightnessBrighten);
-            this.groupBoxBrightness.Location = new System.Drawing.Point(3, 111);
+            this.groupBoxBrightness.Location = new System.Drawing.Point(3, 117);
             this.groupBoxBrightness.Name = "groupBoxBrightness";
             this.groupBoxBrightness.Size = new System.Drawing.Size(344, 52);
             this.groupBoxBrightness.TabIndex = 3;
@@ -559,7 +577,7 @@
             // groupBoxThresholding
             // 
             this.groupBoxThresholding.Controls.Add(this.buttonThresholdingOtsuMethod);
-            this.groupBoxThresholding.Location = new System.Drawing.Point(3, 53);
+            this.groupBoxThresholding.Location = new System.Drawing.Point(3, 61);
             this.groupBoxThresholding.Name = "groupBoxThresholding";
             this.groupBoxThresholding.Size = new System.Drawing.Size(344, 52);
             this.groupBoxThresholding.TabIndex = 3;
@@ -687,6 +705,116 @@
             this.buttonTransformOrigin.Text = "Origin";
             this.buttonTransformOrigin.UseVisualStyleBackColor = true;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel6.Controls.Add(this.groupBoxSegmentation);
+            this.panel6.Location = new System.Drawing.Point(359, 107);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(350, 144);
+            this.panel6.TabIndex = 5;
+            // 
+            // groupBoxSegmentation
+            // 
+            this.groupBoxSegmentation.Controls.Add(this.textBoxIterationLevel);
+            this.groupBoxSegmentation.Controls.Add(this.textBoxSegmentationK);
+            this.groupBoxSegmentation.Controls.Add(this.labelSegmentationIterationLevel);
+            this.groupBoxSegmentation.Controls.Add(this.labelSegmentationK);
+            this.groupBoxSegmentation.Controls.Add(this.buttonSegmentationKmeans);
+            this.groupBoxSegmentation.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxSegmentation.Name = "groupBoxSegmentation";
+            this.groupBoxSegmentation.Size = new System.Drawing.Size(344, 137);
+            this.groupBoxSegmentation.TabIndex = 0;
+            this.groupBoxSegmentation.TabStop = false;
+            this.groupBoxSegmentation.Text = "Segmentation";
+            // 
+            // buttonSegmentationKmeans
+            // 
+            this.buttonSegmentationKmeans.Location = new System.Drawing.Point(263, 77);
+            this.buttonSegmentationKmeans.Name = "buttonSegmentationKmeans";
+            this.buttonSegmentationKmeans.Size = new System.Drawing.Size(75, 23);
+            this.buttonSegmentationKmeans.TabIndex = 2;
+            this.buttonSegmentationKmeans.Text = "K Means";
+            this.buttonSegmentationKmeans.UseVisualStyleBackColor = true;
+            // 
+            // labelSegmentationK
+            // 
+            this.labelSegmentationK.AutoSize = true;
+            this.labelSegmentationK.Location = new System.Drawing.Point(6, 24);
+            this.labelSegmentationK.Name = "labelSegmentationK";
+            this.labelSegmentationK.Size = new System.Drawing.Size(43, 12);
+            this.labelSegmentationK.TabIndex = 3;
+            this.labelSegmentationK.Text = "K Value";
+            // 
+            // labelSegmentationIterationLevel
+            // 
+            this.labelSegmentationIterationLevel.AutoSize = true;
+            this.labelSegmentationIterationLevel.Location = new System.Drawing.Point(6, 52);
+            this.labelSegmentationIterationLevel.Name = "labelSegmentationIterationLevel";
+            this.labelSegmentationIterationLevel.Size = new System.Drawing.Size(73, 12);
+            this.labelSegmentationIterationLevel.TabIndex = 4;
+            this.labelSegmentationIterationLevel.Text = "Iteration Level";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Info;
+            this.panel7.Controls.Add(this.groupBoxCompression);
+            this.panel7.Location = new System.Drawing.Point(359, 257);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(350, 87);
+            this.panel7.TabIndex = 6;
+            // 
+            // groupBoxCompression
+            // 
+            this.groupBoxCompression.Controls.Add(this.textBoxCompressionBits);
+            this.groupBoxCompression.Controls.Add(this.labelCompressionBits);
+            this.groupBoxCompression.Controls.Add(this.button1);
+            this.groupBoxCompression.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxCompression.Name = "groupBoxCompression";
+            this.groupBoxCompression.Size = new System.Drawing.Size(344, 81);
+            this.groupBoxCompression.TabIndex = 0;
+            this.groupBoxCompression.TabStop = false;
+            this.groupBoxCompression.Text = "Compression";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(213, 49);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "8-bit plane slicing";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // labelCompressionBits
+            // 
+            this.labelCompressionBits.AutoSize = true;
+            this.labelCompressionBits.Location = new System.Drawing.Point(6, 24);
+            this.labelCompressionBits.Name = "labelCompressionBits";
+            this.labelCompressionBits.Size = new System.Drawing.Size(23, 12);
+            this.labelCompressionBits.TabIndex = 2;
+            this.labelCompressionBits.Text = "Bits";
+            // 
+            // textBoxSegmentationK
+            // 
+            this.textBoxSegmentationK.Location = new System.Drawing.Point(85, 21);
+            this.textBoxSegmentationK.Name = "textBoxSegmentationK";
+            this.textBoxSegmentationK.Size = new System.Drawing.Size(253, 22);
+            this.textBoxSegmentationK.TabIndex = 5;
+            // 
+            // textBoxIterationLevel
+            // 
+            this.textBoxIterationLevel.Location = new System.Drawing.Point(85, 49);
+            this.textBoxIterationLevel.Name = "textBoxIterationLevel";
+            this.textBoxIterationLevel.Size = new System.Drawing.Size(253, 22);
+            this.textBoxIterationLevel.TabIndex = 6;
+            // 
+            // textBoxCompressionBits
+            // 
+            this.textBoxCompressionBits.Location = new System.Drawing.Point(35, 21);
+            this.textBoxCompressionBits.Name = "textBoxCompressionBits";
+            this.textBoxCompressionBits.Size = new System.Drawing.Size(303, 22);
+            this.textBoxCompressionBits.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -728,6 +856,12 @@
             this.groupBoxGrayscale.ResumeLayout(false);
             this.groupBoxResize.ResumeLayout(false);
             this.groupBoxResize.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.groupBoxSegmentation.ResumeLayout(false);
+            this.groupBoxSegmentation.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.groupBoxCompression.ResumeLayout(false);
+            this.groupBoxCompression.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -794,6 +928,18 @@
         private System.Windows.Forms.Button ButtonEncryptionDecrypt;
         private System.Windows.Forms.Button buttonEncryptionEncrypt;
         private System.Windows.Forms.Button buttonMorphlogyClosing;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.GroupBox groupBoxCompression;
+        private System.Windows.Forms.Label labelCompressionBits;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.GroupBox groupBoxSegmentation;
+        private System.Windows.Forms.Label labelSegmentationIterationLevel;
+        private System.Windows.Forms.Label labelSegmentationK;
+        private System.Windows.Forms.Button buttonSegmentationKmeans;
+        private System.Windows.Forms.TextBox textBoxCompressionBits;
+        private System.Windows.Forms.TextBox textBoxIterationLevel;
+        private System.Windows.Forms.TextBox textBoxSegmentationK;
     }
 }
 
