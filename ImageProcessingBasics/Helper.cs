@@ -20,15 +20,18 @@ namespace ImageProcessingBasics
         public static string GetImageFileFilter()
         {
             ImageCodecInfo[] codecs = ImageCodecInfo.GetImageEncoders();
-            string sep = string.Empty;
+            string sep = "";
             string filter = "";
+            string allImagesFilter = "";
             foreach (var c in codecs)
             {
                 string codecName = c.FormatDescription;
                 filter = String.Format("{0}{1}{2} ({3})|{3}", filter, sep, codecName, c.FilenameExtension.ToLower());
+                allImagesFilter = String.Format("{0};{1}", allImagesFilter, c.FilenameExtension.ToLower());
                 sep = "|";
             }
             filter = String.Format("{0}{1}{2} ({3})|{3}", filter, sep, "All Files", "*.*");
+            filter = String.Format("All images|{0}|{1}", allImagesFilter, filter);
             return filter;
         }
         public static ImageFormat GetImageFormat(string fileName)

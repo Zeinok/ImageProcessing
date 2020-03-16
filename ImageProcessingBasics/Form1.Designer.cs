@@ -28,22 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBoxIn = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButtonFile = new System.Windows.Forms.ToolStripDropDownButton();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButtonEdit = new System.Windows.Forms.ToolStripDropDownButton();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxIn = new System.Windows.Forms.GroupBox();
-            this.pictureBoxInB = new System.Windows.Forms.PictureBox();
-            this.pictureBoxInG = new System.Windows.Forms.PictureBox();
-            this.pictureBoxInR = new System.Windows.Forms.PictureBox();
+            this.labelInImgSize = new System.Windows.Forms.Label();
+            this.pictureBoxInBGraph = new System.Windows.Forms.PictureBox();
+            this.pictureBoxInGGraph = new System.Windows.Forms.PictureBox();
+            this.pictureBoxInRGraph = new System.Windows.Forms.PictureBox();
             this.groupBoxOut = new System.Windows.Forms.GroupBox();
-            this.pictureBoxOutB = new System.Windows.Forms.PictureBox();
-            this.pictureBoxOutG = new System.Windows.Forms.PictureBox();
-            this.pictureBoxOutR = new System.Windows.Forms.PictureBox();
+            this.labelOutImgSize = new System.Windows.Forms.Label();
+            this.pictureBoxOutBGraph = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOutGGraph = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOutRGraph = new System.Windows.Forms.PictureBox();
             this.pictureBoxOut = new System.Windows.Forms.PictureBox();
             this.groupBoxLog = new System.Windows.Forms.GroupBox();
             this.listBoxLog = new System.Windows.Forms.ListBox();
             this.groupBoxManipulation = new System.Windows.Forms.GroupBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.groupBoxCompression = new System.Windows.Forms.GroupBox();
+            this.textBoxCompressionBits = new System.Windows.Forms.TextBox();
+            this.labelCompressionBits = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.groupBoxSegmentation = new System.Windows.Forms.GroupBox();
+            this.textBoxIterationLevel = new System.Windows.Forms.TextBox();
+            this.textBoxSegmentationK = new System.Windows.Forms.TextBox();
+            this.labelSegmentationIterationLevel = new System.Windows.Forms.Label();
+            this.labelSegmentationK = new System.Windows.Forms.Label();
+            this.buttonSegmentationKmeans = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBoxEncryption = new System.Windows.Forms.GroupBox();
             this.textBoxEncryptionKey = new System.Windows.Forms.TextBox();
@@ -87,41 +107,29 @@
             this.textBoxResizeX = new System.Windows.Forms.TextBox();
             this.labelResizeWidth = new System.Windows.Forms.Label();
             this.buttonTransformOrigin = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.groupBoxSegmentation = new System.Windows.Forms.GroupBox();
-            this.buttonSegmentationKmeans = new System.Windows.Forms.Button();
-            this.labelSegmentationK = new System.Windows.Forms.Label();
-            this.labelSegmentationIterationLevel = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.groupBoxCompression = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.labelCompressionBits = new System.Windows.Forms.Label();
-            this.textBoxSegmentationK = new System.Windows.Forms.TextBox();
-            this.textBoxIterationLevel = new System.Windows.Forms.TextBox();
-            this.textBoxCompressionBits = new System.Windows.Forms.TextBox();
-            this.toolStripDropDownButtonFile = new System.Windows.Forms.ToolStripDropDownButton();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelInImgSize = new System.Windows.Forms.Label();
-            this.labelOutImgSize = new System.Windows.Forms.Label();
-            this.toolStripDropDownButtonEdit = new System.Windows.Forms.ToolStripDropDownButton();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timerGC = new System.Windows.Forms.Timer(this.components);
+            this.pictureBoxInBonly = new System.Windows.Forms.PictureBox();
+            this.pictureBoxInGonly = new System.Windows.Forms.PictureBox();
+            this.pictureBoxInRonly = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOutBonly = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOutGonly = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOutRonly = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBoxIn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInBGraph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInGGraph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInRGraph)).BeginInit();
             this.groupBoxOut.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutBGraph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutGGraph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutRGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOut)).BeginInit();
             this.groupBoxLog.SuspendLayout();
             this.groupBoxManipulation.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.groupBoxCompression.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.groupBoxSegmentation.SuspendLayout();
             this.panel5.SuspendLayout();
             this.groupBoxEncryption.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -135,10 +143,12 @@
             this.groupBoxThresholding.SuspendLayout();
             this.groupBoxGrayscale.SuspendLayout();
             this.groupBoxResize.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.groupBoxSegmentation.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.groupBoxCompression.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInBonly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInGonly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInRonly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutBonly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutGonly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutRonly)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxIn
@@ -161,99 +171,183 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripDropDownButtonFile
+            // 
+            this.toolStripDropDownButtonFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButtonFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem});
+            this.toolStripDropDownButtonFile.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonFile.Image")));
+            this.toolStripDropDownButtonFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButtonFile.Name = "toolStripDropDownButtonFile";
+            this.toolStripDropDownButtonFile.Size = new System.Drawing.Size(56, 22);
+            this.toolStripDropDownButtonFile.Text = "File (&F)";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.openToolStripMenuItem.Text = "Open (&O)";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.saveToolStripMenuItem.Text = "Save (&S)";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.saveAsToolStripMenuItem.Text = "Save As (&A)";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButtonEdit
+            // 
+            this.toolStripDropDownButtonEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButtonEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.undoToolStripMenuItem,
+            this.redoToolStripMenuItem});
+            this.toolStripDropDownButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonEdit.Image")));
+            this.toolStripDropDownButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButtonEdit.Name = "toolStripDropDownButtonEdit";
+            this.toolStripDropDownButtonEdit.Size = new System.Drawing.Size(60, 22);
+            this.toolStripDropDownButtonEdit.Text = "Edit (&E)";
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.undoToolStripMenuItem.Text = "Undo";
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.redoToolStripMenuItem.Text = "Redo";
+            // 
             // groupBoxIn
             // 
+            this.groupBoxIn.Controls.Add(this.pictureBoxInBonly);
+            this.groupBoxIn.Controls.Add(this.pictureBoxInGonly);
+            this.groupBoxIn.Controls.Add(this.pictureBoxInRonly);
             this.groupBoxIn.Controls.Add(this.labelInImgSize);
-            this.groupBoxIn.Controls.Add(this.pictureBoxInB);
-            this.groupBoxIn.Controls.Add(this.pictureBoxInG);
-            this.groupBoxIn.Controls.Add(this.pictureBoxInR);
+            this.groupBoxIn.Controls.Add(this.pictureBoxInBGraph);
+            this.groupBoxIn.Controls.Add(this.pictureBoxInGGraph);
+            this.groupBoxIn.Controls.Add(this.pictureBoxInRGraph);
             this.groupBoxIn.Controls.Add(this.pictureBoxIn);
             this.groupBoxIn.Location = new System.Drawing.Point(12, 28);
             this.groupBoxIn.Name = "groupBoxIn";
-            this.groupBoxIn.Size = new System.Drawing.Size(332, 440);
+            this.groupBoxIn.Size = new System.Drawing.Size(332, 545);
             this.groupBoxIn.TabIndex = 3;
             this.groupBoxIn.TabStop = false;
             this.groupBoxIn.Text = "Original Image";
             // 
-            // pictureBoxInB
+            // labelInImgSize
             // 
-            this.pictureBoxInB.BackColor = System.Drawing.Color.White;
-            this.pictureBoxInB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxInB.Location = new System.Drawing.Point(178, 347);
-            this.pictureBoxInB.Name = "pictureBoxInB";
-            this.pictureBoxInB.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxInB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxInB.TabIndex = 3;
-            this.pictureBoxInB.TabStop = false;
+            this.labelInImgSize.AutoSize = true;
+            this.labelInImgSize.Location = new System.Drawing.Point(110, 0);
+            this.labelInImgSize.Name = "labelInImgSize";
+            this.labelInImgSize.Size = new System.Drawing.Size(21, 12);
+            this.labelInImgSize.TabIndex = 4;
+            this.labelInImgSize.Text = "?x?";
+            this.labelInImgSize.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // pictureBoxInG
+            // pictureBoxInBGraph
             // 
-            this.pictureBoxInG.BackColor = System.Drawing.Color.White;
-            this.pictureBoxInG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxInG.Location = new System.Drawing.Point(92, 347);
-            this.pictureBoxInG.Name = "pictureBoxInG";
-            this.pictureBoxInG.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxInG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxInG.TabIndex = 2;
-            this.pictureBoxInG.TabStop = false;
+            this.pictureBoxInBGraph.BackColor = System.Drawing.Color.White;
+            this.pictureBoxInBGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxInBGraph.Location = new System.Drawing.Point(218, 453);
+            this.pictureBoxInBGraph.Name = "pictureBoxInBGraph";
+            this.pictureBoxInBGraph.Size = new System.Drawing.Size(100, 80);
+            this.pictureBoxInBGraph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxInBGraph.TabIndex = 3;
+            this.pictureBoxInBGraph.TabStop = false;
             // 
-            // pictureBoxInR
+            // pictureBoxInGGraph
             // 
-            this.pictureBoxInR.BackColor = System.Drawing.Color.White;
-            this.pictureBoxInR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxInR.Location = new System.Drawing.Point(6, 347);
-            this.pictureBoxInR.Name = "pictureBoxInR";
-            this.pictureBoxInR.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxInR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxInR.TabIndex = 1;
-            this.pictureBoxInR.TabStop = false;
+            this.pictureBoxInGGraph.BackColor = System.Drawing.Color.White;
+            this.pictureBoxInGGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxInGGraph.Location = new System.Drawing.Point(112, 453);
+            this.pictureBoxInGGraph.Name = "pictureBoxInGGraph";
+            this.pictureBoxInGGraph.Size = new System.Drawing.Size(100, 80);
+            this.pictureBoxInGGraph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxInGGraph.TabIndex = 2;
+            this.pictureBoxInGGraph.TabStop = false;
+            // 
+            // pictureBoxInRGraph
+            // 
+            this.pictureBoxInRGraph.BackColor = System.Drawing.Color.White;
+            this.pictureBoxInRGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxInRGraph.Location = new System.Drawing.Point(6, 453);
+            this.pictureBoxInRGraph.Name = "pictureBoxInRGraph";
+            this.pictureBoxInRGraph.Size = new System.Drawing.Size(100, 80);
+            this.pictureBoxInRGraph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxInRGraph.TabIndex = 1;
+            this.pictureBoxInRGraph.TabStop = false;
             // 
             // groupBoxOut
             // 
+            this.groupBoxOut.Controls.Add(this.pictureBoxOutBonly);
+            this.groupBoxOut.Controls.Add(this.pictureBoxOutGonly);
+            this.groupBoxOut.Controls.Add(this.pictureBoxOutRonly);
             this.groupBoxOut.Controls.Add(this.labelOutImgSize);
-            this.groupBoxOut.Controls.Add(this.pictureBoxOutB);
-            this.groupBoxOut.Controls.Add(this.pictureBoxOutG);
-            this.groupBoxOut.Controls.Add(this.pictureBoxOutR);
+            this.groupBoxOut.Controls.Add(this.pictureBoxOutBGraph);
+            this.groupBoxOut.Controls.Add(this.pictureBoxOutGGraph);
+            this.groupBoxOut.Controls.Add(this.pictureBoxOutRGraph);
             this.groupBoxOut.Controls.Add(this.pictureBoxOut);
             this.groupBoxOut.Location = new System.Drawing.Point(350, 28);
             this.groupBoxOut.Name = "groupBoxOut";
-            this.groupBoxOut.Size = new System.Drawing.Size(332, 440);
+            this.groupBoxOut.Size = new System.Drawing.Size(332, 545);
             this.groupBoxOut.TabIndex = 4;
             this.groupBoxOut.TabStop = false;
             this.groupBoxOut.Text = "Result Image";
             // 
-            // pictureBoxOutB
+            // labelOutImgSize
             // 
-            this.pictureBoxOutB.BackColor = System.Drawing.Color.White;
-            this.pictureBoxOutB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxOutB.Location = new System.Drawing.Point(178, 347);
-            this.pictureBoxOutB.Name = "pictureBoxOutB";
-            this.pictureBoxOutB.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxOutB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxOutB.TabIndex = 3;
-            this.pictureBoxOutB.TabStop = false;
+            this.labelOutImgSize.AutoSize = true;
+            this.labelOutImgSize.Location = new System.Drawing.Point(110, 0);
+            this.labelOutImgSize.Name = "labelOutImgSize";
+            this.labelOutImgSize.Size = new System.Drawing.Size(21, 12);
+            this.labelOutImgSize.TabIndex = 5;
+            this.labelOutImgSize.Text = "?x?";
+            this.labelOutImgSize.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // pictureBoxOutG
+            // pictureBoxOutBGraph
             // 
-            this.pictureBoxOutG.BackColor = System.Drawing.Color.White;
-            this.pictureBoxOutG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxOutG.Location = new System.Drawing.Point(92, 347);
-            this.pictureBoxOutG.Name = "pictureBoxOutG";
-            this.pictureBoxOutG.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxOutG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxOutG.TabIndex = 2;
-            this.pictureBoxOutG.TabStop = false;
+            this.pictureBoxOutBGraph.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOutBGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxOutBGraph.Location = new System.Drawing.Point(218, 453);
+            this.pictureBoxOutBGraph.Name = "pictureBoxOutBGraph";
+            this.pictureBoxOutBGraph.Size = new System.Drawing.Size(100, 80);
+            this.pictureBoxOutBGraph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxOutBGraph.TabIndex = 3;
+            this.pictureBoxOutBGraph.TabStop = false;
             // 
-            // pictureBoxOutR
+            // pictureBoxOutGGraph
             // 
-            this.pictureBoxOutR.BackColor = System.Drawing.Color.White;
-            this.pictureBoxOutR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxOutR.Location = new System.Drawing.Point(6, 347);
-            this.pictureBoxOutR.Name = "pictureBoxOutR";
-            this.pictureBoxOutR.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxOutR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxOutR.TabIndex = 1;
-            this.pictureBoxOutR.TabStop = false;
+            this.pictureBoxOutGGraph.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOutGGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxOutGGraph.Location = new System.Drawing.Point(112, 453);
+            this.pictureBoxOutGGraph.Name = "pictureBoxOutGGraph";
+            this.pictureBoxOutGGraph.Size = new System.Drawing.Size(100, 80);
+            this.pictureBoxOutGGraph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxOutGGraph.TabIndex = 2;
+            this.pictureBoxOutGGraph.TabStop = false;
+            // 
+            // pictureBoxOutRGraph
+            // 
+            this.pictureBoxOutRGraph.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOutRGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxOutRGraph.Location = new System.Drawing.Point(6, 453);
+            this.pictureBoxOutRGraph.Name = "pictureBoxOutRGraph";
+            this.pictureBoxOutRGraph.Size = new System.Drawing.Size(100, 80);
+            this.pictureBoxOutRGraph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxOutRGraph.TabIndex = 1;
+            this.pictureBoxOutRGraph.TabStop = false;
             // 
             // pictureBoxOut
             // 
@@ -267,7 +361,7 @@
             // groupBoxLog
             // 
             this.groupBoxLog.Controls.Add(this.listBoxLog);
-            this.groupBoxLog.Location = new System.Drawing.Point(12, 474);
+            this.groupBoxLog.Location = new System.Drawing.Point(12, 579);
             this.groupBoxLog.Name = "groupBoxLog";
             this.groupBoxLog.Size = new System.Drawing.Size(670, 150);
             this.groupBoxLog.TabIndex = 5;
@@ -302,6 +396,116 @@
             this.groupBoxManipulation.TabIndex = 6;
             this.groupBoxManipulation.TabStop = false;
             this.groupBoxManipulation.Text = "Image Manipulations";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Info;
+            this.panel7.Controls.Add(this.groupBoxCompression);
+            this.panel7.Location = new System.Drawing.Point(359, 257);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(350, 87);
+            this.panel7.TabIndex = 6;
+            // 
+            // groupBoxCompression
+            // 
+            this.groupBoxCompression.Controls.Add(this.textBoxCompressionBits);
+            this.groupBoxCompression.Controls.Add(this.labelCompressionBits);
+            this.groupBoxCompression.Controls.Add(this.button1);
+            this.groupBoxCompression.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxCompression.Name = "groupBoxCompression";
+            this.groupBoxCompression.Size = new System.Drawing.Size(344, 81);
+            this.groupBoxCompression.TabIndex = 0;
+            this.groupBoxCompression.TabStop = false;
+            this.groupBoxCompression.Text = "Compression";
+            // 
+            // textBoxCompressionBits
+            // 
+            this.textBoxCompressionBits.Location = new System.Drawing.Point(35, 21);
+            this.textBoxCompressionBits.Name = "textBoxCompressionBits";
+            this.textBoxCompressionBits.Size = new System.Drawing.Size(303, 22);
+            this.textBoxCompressionBits.TabIndex = 7;
+            // 
+            // labelCompressionBits
+            // 
+            this.labelCompressionBits.AutoSize = true;
+            this.labelCompressionBits.Location = new System.Drawing.Point(6, 24);
+            this.labelCompressionBits.Name = "labelCompressionBits";
+            this.labelCompressionBits.Size = new System.Drawing.Size(23, 12);
+            this.labelCompressionBits.TabIndex = 2;
+            this.labelCompressionBits.Text = "Bits";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(213, 49);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "8-bit plane slicing";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel6.Controls.Add(this.groupBoxSegmentation);
+            this.panel6.Location = new System.Drawing.Point(359, 107);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(350, 144);
+            this.panel6.TabIndex = 5;
+            // 
+            // groupBoxSegmentation
+            // 
+            this.groupBoxSegmentation.Controls.Add(this.textBoxIterationLevel);
+            this.groupBoxSegmentation.Controls.Add(this.textBoxSegmentationK);
+            this.groupBoxSegmentation.Controls.Add(this.labelSegmentationIterationLevel);
+            this.groupBoxSegmentation.Controls.Add(this.labelSegmentationK);
+            this.groupBoxSegmentation.Controls.Add(this.buttonSegmentationKmeans);
+            this.groupBoxSegmentation.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxSegmentation.Name = "groupBoxSegmentation";
+            this.groupBoxSegmentation.Size = new System.Drawing.Size(344, 137);
+            this.groupBoxSegmentation.TabIndex = 0;
+            this.groupBoxSegmentation.TabStop = false;
+            this.groupBoxSegmentation.Text = "Segmentation";
+            // 
+            // textBoxIterationLevel
+            // 
+            this.textBoxIterationLevel.Location = new System.Drawing.Point(85, 49);
+            this.textBoxIterationLevel.Name = "textBoxIterationLevel";
+            this.textBoxIterationLevel.Size = new System.Drawing.Size(253, 22);
+            this.textBoxIterationLevel.TabIndex = 6;
+            // 
+            // textBoxSegmentationK
+            // 
+            this.textBoxSegmentationK.Location = new System.Drawing.Point(85, 21);
+            this.textBoxSegmentationK.Name = "textBoxSegmentationK";
+            this.textBoxSegmentationK.Size = new System.Drawing.Size(253, 22);
+            this.textBoxSegmentationK.TabIndex = 5;
+            // 
+            // labelSegmentationIterationLevel
+            // 
+            this.labelSegmentationIterationLevel.AutoSize = true;
+            this.labelSegmentationIterationLevel.Location = new System.Drawing.Point(6, 52);
+            this.labelSegmentationIterationLevel.Name = "labelSegmentationIterationLevel";
+            this.labelSegmentationIterationLevel.Size = new System.Drawing.Size(73, 12);
+            this.labelSegmentationIterationLevel.TabIndex = 4;
+            this.labelSegmentationIterationLevel.Text = "Iteration Level";
+            // 
+            // labelSegmentationK
+            // 
+            this.labelSegmentationK.AutoSize = true;
+            this.labelSegmentationK.Location = new System.Drawing.Point(6, 24);
+            this.labelSegmentationK.Name = "labelSegmentationK";
+            this.labelSegmentationK.Size = new System.Drawing.Size(43, 12);
+            this.labelSegmentationK.TabIndex = 3;
+            this.labelSegmentationK.Text = "K Value";
+            // 
+            // buttonSegmentationKmeans
+            // 
+            this.buttonSegmentationKmeans.Location = new System.Drawing.Point(263, 77);
+            this.buttonSegmentationKmeans.Name = "buttonSegmentationKmeans";
+            this.buttonSegmentationKmeans.Size = new System.Drawing.Size(75, 23);
+            this.buttonSegmentationKmeans.TabIndex = 2;
+            this.buttonSegmentationKmeans.Text = "K Means";
+            this.buttonSegmentationKmeans.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -716,197 +920,65 @@
             this.buttonTransformOrigin.Text = "Origin";
             this.buttonTransformOrigin.UseVisualStyleBackColor = true;
             // 
-            // panel6
+            // pictureBoxInBonly
             // 
-            this.panel6.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panel6.Controls.Add(this.groupBoxSegmentation);
-            this.panel6.Location = new System.Drawing.Point(359, 107);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(350, 144);
-            this.panel6.TabIndex = 5;
+            this.pictureBoxInBonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxInBonly.Location = new System.Drawing.Point(218, 347);
+            this.pictureBoxInBonly.Name = "pictureBoxInBonly";
+            this.pictureBoxInBonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxInBonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInBonly.TabIndex = 7;
+            this.pictureBoxInBonly.TabStop = false;
             // 
-            // groupBoxSegmentation
+            // pictureBoxInGonly
             // 
-            this.groupBoxSegmentation.Controls.Add(this.textBoxIterationLevel);
-            this.groupBoxSegmentation.Controls.Add(this.textBoxSegmentationK);
-            this.groupBoxSegmentation.Controls.Add(this.labelSegmentationIterationLevel);
-            this.groupBoxSegmentation.Controls.Add(this.labelSegmentationK);
-            this.groupBoxSegmentation.Controls.Add(this.buttonSegmentationKmeans);
-            this.groupBoxSegmentation.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxSegmentation.Name = "groupBoxSegmentation";
-            this.groupBoxSegmentation.Size = new System.Drawing.Size(344, 137);
-            this.groupBoxSegmentation.TabIndex = 0;
-            this.groupBoxSegmentation.TabStop = false;
-            this.groupBoxSegmentation.Text = "Segmentation";
+            this.pictureBoxInGonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxInGonly.Location = new System.Drawing.Point(112, 347);
+            this.pictureBoxInGonly.Name = "pictureBoxInGonly";
+            this.pictureBoxInGonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxInGonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInGonly.TabIndex = 6;
+            this.pictureBoxInGonly.TabStop = false;
             // 
-            // buttonSegmentationKmeans
+            // pictureBoxInRonly
             // 
-            this.buttonSegmentationKmeans.Location = new System.Drawing.Point(263, 77);
-            this.buttonSegmentationKmeans.Name = "buttonSegmentationKmeans";
-            this.buttonSegmentationKmeans.Size = new System.Drawing.Size(75, 23);
-            this.buttonSegmentationKmeans.TabIndex = 2;
-            this.buttonSegmentationKmeans.Text = "K Means";
-            this.buttonSegmentationKmeans.UseVisualStyleBackColor = true;
+            this.pictureBoxInRonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxInRonly.Location = new System.Drawing.Point(6, 347);
+            this.pictureBoxInRonly.Name = "pictureBoxInRonly";
+            this.pictureBoxInRonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxInRonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInRonly.TabIndex = 5;
+            this.pictureBoxInRonly.TabStop = false;
             // 
-            // labelSegmentationK
+            // pictureBoxOutBonly
             // 
-            this.labelSegmentationK.AutoSize = true;
-            this.labelSegmentationK.Location = new System.Drawing.Point(6, 24);
-            this.labelSegmentationK.Name = "labelSegmentationK";
-            this.labelSegmentationK.Size = new System.Drawing.Size(43, 12);
-            this.labelSegmentationK.TabIndex = 3;
-            this.labelSegmentationK.Text = "K Value";
+            this.pictureBoxOutBonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxOutBonly.Location = new System.Drawing.Point(218, 347);
+            this.pictureBoxOutBonly.Name = "pictureBoxOutBonly";
+            this.pictureBoxOutBonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxOutBonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxOutBonly.TabIndex = 8;
+            this.pictureBoxOutBonly.TabStop = false;
             // 
-            // labelSegmentationIterationLevel
+            // pictureBoxOutGonly
             // 
-            this.labelSegmentationIterationLevel.AutoSize = true;
-            this.labelSegmentationIterationLevel.Location = new System.Drawing.Point(6, 52);
-            this.labelSegmentationIterationLevel.Name = "labelSegmentationIterationLevel";
-            this.labelSegmentationIterationLevel.Size = new System.Drawing.Size(73, 12);
-            this.labelSegmentationIterationLevel.TabIndex = 4;
-            this.labelSegmentationIterationLevel.Text = "Iteration Level";
+            this.pictureBoxOutGonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxOutGonly.Location = new System.Drawing.Point(112, 347);
+            this.pictureBoxOutGonly.Name = "pictureBoxOutGonly";
+            this.pictureBoxOutGonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxOutGonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxOutGonly.TabIndex = 7;
+            this.pictureBoxOutGonly.TabStop = false;
             // 
-            // panel7
+            // pictureBoxOutRonly
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.Info;
-            this.panel7.Controls.Add(this.groupBoxCompression);
-            this.panel7.Location = new System.Drawing.Point(359, 257);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(350, 87);
-            this.panel7.TabIndex = 6;
-            // 
-            // groupBoxCompression
-            // 
-            this.groupBoxCompression.Controls.Add(this.textBoxCompressionBits);
-            this.groupBoxCompression.Controls.Add(this.labelCompressionBits);
-            this.groupBoxCompression.Controls.Add(this.button1);
-            this.groupBoxCompression.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxCompression.Name = "groupBoxCompression";
-            this.groupBoxCompression.Size = new System.Drawing.Size(344, 81);
-            this.groupBoxCompression.TabIndex = 0;
-            this.groupBoxCompression.TabStop = false;
-            this.groupBoxCompression.Text = "Compression";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(213, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "8-bit plane slicing";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // labelCompressionBits
-            // 
-            this.labelCompressionBits.AutoSize = true;
-            this.labelCompressionBits.Location = new System.Drawing.Point(6, 24);
-            this.labelCompressionBits.Name = "labelCompressionBits";
-            this.labelCompressionBits.Size = new System.Drawing.Size(23, 12);
-            this.labelCompressionBits.TabIndex = 2;
-            this.labelCompressionBits.Text = "Bits";
-            // 
-            // textBoxSegmentationK
-            // 
-            this.textBoxSegmentationK.Location = new System.Drawing.Point(85, 21);
-            this.textBoxSegmentationK.Name = "textBoxSegmentationK";
-            this.textBoxSegmentationK.Size = new System.Drawing.Size(253, 22);
-            this.textBoxSegmentationK.TabIndex = 5;
-            // 
-            // textBoxIterationLevel
-            // 
-            this.textBoxIterationLevel.Location = new System.Drawing.Point(85, 49);
-            this.textBoxIterationLevel.Name = "textBoxIterationLevel";
-            this.textBoxIterationLevel.Size = new System.Drawing.Size(253, 22);
-            this.textBoxIterationLevel.TabIndex = 6;
-            // 
-            // textBoxCompressionBits
-            // 
-            this.textBoxCompressionBits.Location = new System.Drawing.Point(35, 21);
-            this.textBoxCompressionBits.Name = "textBoxCompressionBits";
-            this.textBoxCompressionBits.Size = new System.Drawing.Size(303, 22);
-            this.textBoxCompressionBits.TabIndex = 7;
-            // 
-            // toolStripDropDownButtonFile
-            // 
-            this.toolStripDropDownButtonFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButtonFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem});
-            this.toolStripDropDownButtonFile.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonFile.Image")));
-            this.toolStripDropDownButtonFile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButtonFile.Name = "toolStripDropDownButtonFile";
-            this.toolStripDropDownButtonFile.Size = new System.Drawing.Size(56, 22);
-            this.toolStripDropDownButtonFile.Text = "File (&F)";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openToolStripMenuItem.Text = "Open (&O)";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem.Text = "Save (&S)";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As (&A)";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
-            // labelInImgSize
-            // 
-            this.labelInImgSize.AutoSize = true;
-            this.labelInImgSize.Location = new System.Drawing.Point(264, 347);
-            this.labelInImgSize.Name = "labelInImgSize";
-            this.labelInImgSize.Size = new System.Drawing.Size(21, 12);
-            this.labelInImgSize.TabIndex = 4;
-            this.labelInImgSize.Text = "?x?";
-            // 
-            // labelOutImgSize
-            // 
-            this.labelOutImgSize.AutoSize = true;
-            this.labelOutImgSize.Location = new System.Drawing.Point(264, 347);
-            this.labelOutImgSize.Name = "labelOutImgSize";
-            this.labelOutImgSize.Size = new System.Drawing.Size(21, 12);
-            this.labelOutImgSize.TabIndex = 5;
-            this.labelOutImgSize.Text = "?x?";
-            // 
-            // toolStripDropDownButtonEdit
-            // 
-            this.toolStripDropDownButtonEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButtonEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem,
-            this.redoToolStripMenuItem});
-            this.toolStripDropDownButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonEdit.Image")));
-            this.toolStripDropDownButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButtonEdit.Name = "toolStripDropDownButtonEdit";
-            this.toolStripDropDownButtonEdit.Size = new System.Drawing.Size(60, 22);
-            this.toolStripDropDownButtonEdit.Text = "Edit (&E)";
-            // 
-            // undoToolStripMenuItem
-            // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.undoToolStripMenuItem.Text = "Undo";
-            // 
-            // redoToolStripMenuItem
-            // 
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.redoToolStripMenuItem.Text = "Redo";
-            // 
-            // timerGC
-            // 
-            this.timerGC.Enabled = true;
-            this.timerGC.Interval = 2000;
-            this.timerGC.Tick += new System.EventHandler(this.timer1_Tick);
+            this.pictureBoxOutRonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxOutRonly.Location = new System.Drawing.Point(6, 347);
+            this.pictureBoxOutRonly.Name = "pictureBoxOutRonly";
+            this.pictureBoxOutRonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxOutRonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxOutRonly.TabIndex = 6;
+            this.pictureBoxOutRonly.TabStop = false;
             // 
             // Form1
             // 
@@ -920,23 +992,30 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "Image Processing";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBoxIn.ResumeLayout(false);
             this.groupBoxIn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInBGraph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInGGraph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInRGraph)).EndInit();
             this.groupBoxOut.ResumeLayout(false);
             this.groupBoxOut.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutBGraph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutGGraph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutRGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOut)).EndInit();
             this.groupBoxLog.ResumeLayout(false);
             this.groupBoxManipulation.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.groupBoxCompression.ResumeLayout(false);
+            this.groupBoxCompression.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.groupBoxSegmentation.ResumeLayout(false);
+            this.groupBoxSegmentation.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.groupBoxEncryption.ResumeLayout(false);
             this.groupBoxEncryption.PerformLayout();
@@ -952,12 +1031,12 @@
             this.groupBoxGrayscale.ResumeLayout(false);
             this.groupBoxResize.ResumeLayout(false);
             this.groupBoxResize.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.groupBoxSegmentation.ResumeLayout(false);
-            this.groupBoxSegmentation.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.groupBoxCompression.ResumeLayout(false);
-            this.groupBoxCompression.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInBonly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInGonly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInRonly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutBonly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutGonly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutRonly)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -968,13 +1047,13 @@
         private System.Windows.Forms.PictureBox pictureBoxIn;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.GroupBox groupBoxIn;
-        private System.Windows.Forms.PictureBox pictureBoxInB;
-        private System.Windows.Forms.PictureBox pictureBoxInG;
-        private System.Windows.Forms.PictureBox pictureBoxInR;
+        private System.Windows.Forms.PictureBox pictureBoxInBGraph;
+        private System.Windows.Forms.PictureBox pictureBoxInGGraph;
+        private System.Windows.Forms.PictureBox pictureBoxInRGraph;
         private System.Windows.Forms.GroupBox groupBoxOut;
-        private System.Windows.Forms.PictureBox pictureBoxOutB;
-        private System.Windows.Forms.PictureBox pictureBoxOutG;
-        private System.Windows.Forms.PictureBox pictureBoxOutR;
+        private System.Windows.Forms.PictureBox pictureBoxOutBGraph;
+        private System.Windows.Forms.PictureBox pictureBoxOutGGraph;
+        private System.Windows.Forms.PictureBox pictureBoxOutRGraph;
         private System.Windows.Forms.PictureBox pictureBoxOut;
         private System.Windows.Forms.GroupBox groupBoxLog;
         private System.Windows.Forms.ListBox listBoxLog;
@@ -1043,7 +1122,12 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonEdit;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
-        private System.Windows.Forms.Timer timerGC;
+        private System.Windows.Forms.PictureBox pictureBoxInBonly;
+        private System.Windows.Forms.PictureBox pictureBoxInGonly;
+        private System.Windows.Forms.PictureBox pictureBoxInRonly;
+        private System.Windows.Forms.PictureBox pictureBoxOutBonly;
+        private System.Windows.Forms.PictureBox pictureBoxOutGonly;
+        private System.Windows.Forms.PictureBox pictureBoxOutRonly;
     }
 }
 

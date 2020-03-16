@@ -10,9 +10,8 @@ namespace ImageProcessingBasics
     {
         public static void Wrap(Task task)
         {
-            var fieldInfo = typeof(Task).GetField("m_action", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            Action action = (Action)fieldInfo.GetValue(task);
-            task.ContinueWith((t) => {
+            Task newTask = Task.Factory.StartNew(async () => await task, TaskCreationOptions.LongRunning);
+            newTask.ContinueWith((t) => {
                 if (t.Exception != null)
                 {
                     Program.Form.appendLog("Async wrapper faulted with exception:");
