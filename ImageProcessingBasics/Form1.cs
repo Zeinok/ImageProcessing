@@ -17,6 +17,8 @@ namespace ImageProcessingBasics
     {
         string fileDialogImageFilter = Helper.GetImageFileFilter();
         PictureBox[] pictureBoxes = null;
+        Stack<Bitmap> undo = new Stack<Bitmap>();
+        Stack<Bitmap> redo = new Stack<Bitmap>();
 
         Bitmap inputBitmap {
             get
@@ -51,67 +53,6 @@ namespace ImageProcessingBasics
         {
             InitializeComponent();
         }
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //try
-            //{
-                GC.AddMemoryPressure(256);
-                OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = fileDialogImageFilter;
-                if (ofd.ShowDialog() != DialogResult.OK) return;
-                FileStream fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-
-                AsyncWrapper.Wrap(loadImg(fs));
-                //fs.Close();
-                appendLog(String.Format("File {0} opened.", ofd.SafeFileName));
-
-                foreach(var p in pictureBoxes)
-                    p.Image = null;
-                AsyncWrapper.Wrap(updateAllRGBGraph());
-                GC.Collect();
-                
-//            }
-//            catch (Exception ex)
-//            {
-//                appendLog(String.Format("Exception occured during opening file: {0}", ex.Message));
-//#if DEBUG
-//                throw ex;
-//#endif
-//            }
-
-            GC.Collect();
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (saveFilename == "")
-            {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = fileDialogImageFilter;
-                sfd.DefaultExt = "*.png";
-                if (sfd.ShowDialog() != DialogResult.OK) return;
-                saveFilename = sfd.FileName;
-            }
-            
-            try
-            {
-                FileStream fs = new FileStream(saveFilename, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read);
-                pictureBoxOut.Image.Save(fs, Helper.GetImageFormat(saveFilename));
-                fs.Close();
-                appendLog("Done saving image.");
-            }
-            catch (Exception ex)
-            {
-                appendLog(String.Format("Failed to write file: {0}", ex.Message));
-            }
-            
-        }
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            saveFilename = "";
-            saveToolStripMenuItem.PerformClick();
-        }
         
         private async Task<bool> loadImg(Stream s)
         {
@@ -145,9 +86,9 @@ namespace ImageProcessingBasics
             //pictureBoxInRonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.R));
             //pictureBoxInGonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.G));
             //pictureBoxInBonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.B));
-            pictureBoxInRonly.Image = Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.R);
-            pictureBoxInGonly.Image = Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.G);
-            pictureBoxInBonly.Image = Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.B);
+            pictureBoxInRonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.R));
+            pictureBoxInGonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.G));
+            pictureBoxInBonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.B));
 
             this.Invalidate();
             
@@ -163,9 +104,9 @@ namespace ImageProcessingBasics
             //pictureBoxOutRonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.R));
             //pictureBoxOutGonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.G));
             //pictureBoxOutBonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.B));
-            pictureBoxOutRonly.Image = Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.R);
-            pictureBoxOutGonly.Image = Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.G);
-            pictureBoxOutBonly.Image = Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.B);
+            pictureBoxOutRonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.R));
+            pictureBoxOutGonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.G));
+            pictureBoxOutBonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.B));
             this.Invalidate();
         }
 
@@ -204,5 +145,104 @@ namespace ImageProcessingBasics
         {
             pictureBoxes = new PictureBox[] { pictureBoxIn, pictureBoxInRGraph, pictureBoxInGGraph, pictureBoxInBGraph, pictureBoxOut, pictureBoxOutRGraph, pictureBoxOutGGraph, pictureBoxOutBGraph };
         }
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            GC.AddMemoryPressure(256);
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = fileDialogImageFilter;
+            if (ofd.ShowDialog() != DialogResult.OK) return;
+            FileStream fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+
+            AsyncWrapper.WrapSync(loadImg(fs));
+            //fs.Close();
+            appendLog(String.Format("File {0} opened.", ofd.SafeFileName));
+
+            foreach (var p in pictureBoxes)
+                p.Image = null;
+            AsyncWrapper.WrapSync(updateAllRGBGraph());
+            GC.Collect();
+
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                appendLog(String.Format("Exception occured during opening file: {0}", ex.Message));
+            //#if DEBUG
+            //                throw ex;
+            //#endif
+            //            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFilename == "")
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = fileDialogImageFilter;
+                sfd.DefaultExt = "*.png";
+                if (sfd.ShowDialog() != DialogResult.OK) return;
+                saveFilename = sfd.FileName;
+            }
+
+            try
+            {
+                FileStream fs = new FileStream(saveFilename, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read);
+                pictureBoxOut.Image.Save(fs, Helper.GetImageFormat(saveFilename));
+                fs.Close();
+                appendLog(String.Format("Saved image to {0}.", saveFilename));
+            }
+            catch (Exception ex)
+            {
+                appendLog(String.Format("Failed to write file to {0}: {1}", saveFilename, ex.Message));
+            }
+
+        }
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFilename = "";
+            saveToolStripMenuItem.PerformClick();
+        }
+        private async void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (undo.Count > 0)
+            {
+                redo.Push(outputBitmap);
+                outputBitmap = undo.Pop();
+                await updateOutputRGBGraph();
+            }
+            else MessageBox.Show("Nothing to undo");
+        }
+        private async void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (redo.Count > 0)
+            {
+                undo.Push(outputBitmap);
+                outputBitmap = redo.Pop();
+                await updateOutputRGBGraph();
+            }
+            else MessageBox.Show("Nothing to redo");
+        }
+        private async void buttonGrayscaleMeanWeight_Click(object sender, EventArgs e)
+        {
+            undo.Push(Helper.deepCloneBMP(outputBitmap));
+            outputBitmap = await AsyncWrapper.Wrap(() => Grayscale.MeanWeight(Helper.deepCloneBMP(outputBitmap)));
+            await updateOutputRGBGraph();
+        }
+
+        private async void buttonGrayscaleMeanValue_Click(object sender, EventArgs e)
+        {
+            undo.Push(Helper.deepCloneBMP(outputBitmap));
+            outputBitmap = await AsyncWrapper.Wrap(() => Grayscale.MeanValue(Helper.deepCloneBMP(outputBitmap)));
+            await updateOutputRGBGraph();
+        }
+
+        private async void buttonMaximum_Click(object sender, EventArgs e)
+        {
+            undo.Push(Helper.deepCloneBMP(outputBitmap));
+            outputBitmap = await AsyncWrapper.Wrap(() => Grayscale.Max(Helper.deepCloneBMP(outputBitmap)));
+            await updateOutputRGBGraph();
+        }
+
     }
 }

@@ -220,14 +220,16 @@
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.undoToolStripMenuItem.Text = "Undo";
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.redoToolStripMenuItem.Text = "Redo";
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
             // groupBoxIn
             // 
@@ -828,6 +830,7 @@
             this.buttonMaximum.TabIndex = 2;
             this.buttonMaximum.Text = "Maximum";
             this.buttonMaximum.UseVisualStyleBackColor = true;
+            this.buttonMaximum.Click += new System.EventHandler(this.buttonMaximum_Click);
             // 
             // buttonGrayscaleMeanValue
             // 
@@ -835,8 +838,9 @@
             this.buttonGrayscaleMeanValue.Name = "buttonGrayscaleMeanValue";
             this.buttonGrayscaleMeanValue.Size = new System.Drawing.Size(100, 23);
             this.buttonGrayscaleMeanValue.TabIndex = 1;
-            this.buttonGrayscaleMeanValue.Text = "Mean Weight";
+            this.buttonGrayscaleMeanValue.Text = "Mean Value";
             this.buttonGrayscaleMeanValue.UseVisualStyleBackColor = true;
+            this.buttonGrayscaleMeanValue.Click += new System.EventHandler(this.buttonGrayscaleMeanValue_Click);
             // 
             // buttonGrayscaleMeanWeight
             // 
@@ -846,6 +850,7 @@
             this.buttonGrayscaleMeanWeight.TabIndex = 0;
             this.buttonGrayscaleMeanWeight.Text = "Mean Weight";
             this.buttonGrayscaleMeanWeight.UseVisualStyleBackColor = true;
+            this.buttonGrayscaleMeanWeight.Click += new System.EventHandler(this.buttonGrayscaleMeanWeight_Click);
             // 
             // buttonTransformReverse
             // 
