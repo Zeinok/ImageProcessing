@@ -216,19 +216,20 @@
             this.toolStripDropDownButtonEdit.Name = "toolStripDropDownButtonEdit";
             this.toolStripDropDownButtonEdit.Size = new System.Drawing.Size(60, 22);
             this.toolStripDropDownButtonEdit.Text = "Edit (&E)";
+            this.toolStripDropDownButtonEdit.DropDownOpening += new System.EventHandler(this.toolStripDropDownButtonEdit_DropDownOpening);
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.undoToolStripMenuItem.Text = "Undo";
+            this.undoToolStripMenuItem.Text = "Undo (&Z)";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.redoToolStripMenuItem.Text = "Redo";
+            this.redoToolStripMenuItem.Text = "Redo (&Y)";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
             // groupBoxIn

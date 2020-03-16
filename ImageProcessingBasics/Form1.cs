@@ -11,12 +11,15 @@ using System.Windows.Forms;
 using System.IO;
 using System.IO.MemoryMappedFiles;
 
+using System.Diagnostics;
+
 namespace ImageProcessingBasics
 {
     public partial class Form1 : Form
     {
         string fileDialogImageFilter = Helper.GetImageFileFilter();
         PictureBox[] pictureBoxes = null;
+        PictureBox[] outputPictureBoxes = null;
         Stack<Bitmap> undo = new Stack<Bitmap>();
         Stack<Bitmap> redo = new Stack<Bitmap>();
 
@@ -66,8 +69,7 @@ namespace ImageProcessingBasics
             inputBitmap = new Bitmap(s);
             outputBitmap = new Bitmap(s);
             s.Close();
-            await updateInputRGBGraph();
-            await updateOutputRGBGraph();
+            await updateAllRGBGraph();
             return true;
         }
         private async Task<bool> updateAllRGBGraph()
@@ -83,9 +85,6 @@ namespace ImageProcessingBasics
             pictureBoxInRGraph.Image = rgbGraph[0];
             pictureBoxInGGraph.Image = rgbGraph[1];
             pictureBoxInBGraph.Image = rgbGraph[2];
-            //pictureBoxInRonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.R));
-            //pictureBoxInGonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.G));
-            //pictureBoxInBonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.B));
             pictureBoxInRonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.R));
             pictureBoxInGonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.G));
             pictureBoxInBonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(inputBitmap), Graph.Color.B));
@@ -96,18 +95,23 @@ namespace ImageProcessingBasics
 
         private async Task updateOutputRGBGraph()
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
             Bitmap[] rgbGraph = await Task<Bitmap[]>.Factory.StartNew(() => Graph.GetRGBGraph(Helper.deepCloneBMP(outputBitmap)));
             GC.Collect();
             pictureBoxOutRGraph.Image = rgbGraph[0];
             pictureBoxOutGGraph.Image = rgbGraph[1];
             pictureBoxOutBGraph.Image = rgbGraph[2];
-            //pictureBoxOutRonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.R));
-            //pictureBoxOutGonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.G));
-            //pictureBoxOutBonly.Image = await Task<Bitmap>.Factory.StartNew(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.B));
+            GC.Collect();
             pictureBoxOutRonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.R));
+            GC.Collect();
             pictureBoxOutGonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.G));
+            GC.Collect();
             pictureBoxOutBonly.Image = await AsyncWrapper.Wrap(() => Graph.GetRGBImage(Helper.deepCloneBMP(outputBitmap), Graph.Color.B));
+            GC.Collect();
             this.Invalidate();
+            sw.Stop();
+            appendLog(String.Format("updateOutputRGBGraph(): {0}ms", sw.ElapsedMilliseconds));
         }
 
         delegate void appendLogDelegator(string msg);
@@ -120,9 +124,22 @@ namespace ImageProcessingBasics
                 return;
             } 
             listBoxLog.Items.Add(msg);
+            listBoxLog.SelectedIndex = listBoxLog.Items.Count - 1;
+            listBoxLog.SelectedItem = null;
 
         }
-
+        private void clearOutput()
+        {
+            foreach(var p in outputPictureBoxes)
+            {
+                p.Image = null;
+            }
+        }
+        private void pushChange(Bitmap change)
+        {
+            undo.Push(change);
+            redo.Clear();
+        }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             if (inputBitmap != null && inputBitmapChanged)
@@ -143,7 +160,16 @@ namespace ImageProcessingBasics
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pictureBoxes = new PictureBox[] { pictureBoxIn, pictureBoxInRGraph, pictureBoxInGGraph, pictureBoxInBGraph, pictureBoxOut, pictureBoxOutRGraph, pictureBoxOutGGraph, pictureBoxOutBGraph };
+            pictureBoxes = new PictureBox[] { 
+                pictureBoxIn, pictureBoxInRGraph, pictureBoxInGGraph, pictureBoxInBGraph, 
+                pictureBoxOut, pictureBoxOutRGraph, pictureBoxOutGGraph, pictureBoxOutBGraph, 
+                pictureBoxInRonly, pictureBoxInGonly, pictureBoxInBonly,
+                pictureBoxOutRonly, pictureBoxOutGonly, pictureBoxOutBonly
+            };
+            outputPictureBoxes = new PictureBox[] {
+                pictureBoxOut, pictureBoxOutRGraph, pictureBoxOutGGraph, pictureBoxOutBGraph,
+                pictureBoxOutRonly, pictureBoxOutGonly, pictureBoxOutBonly
+            };
         }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -154,15 +180,17 @@ namespace ImageProcessingBasics
             ofd.Filter = fileDialogImageFilter;
             if (ofd.ShowDialog() != DialogResult.OK) return;
             FileStream fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-
+            foreach (var p in pictureBoxes)
+                p.Image = null;
             AsyncWrapper.WrapSync(loadImg(fs));
             //fs.Close();
             appendLog(String.Format("File {0} opened.", ofd.SafeFileName));
 
-            foreach (var p in pictureBoxes)
-                p.Image = null;
-            AsyncWrapper.WrapSync(updateAllRGBGraph());
+
+
             GC.Collect();
+            undo.Clear();
+            redo.Clear();
 
             //            }
             //            catch (Exception ex)
@@ -203,6 +231,11 @@ namespace ImageProcessingBasics
             saveFilename = "";
             saveToolStripMenuItem.PerformClick();
         }
+        private void toolStripDropDownButtonEdit_DropDownOpening(object sender, EventArgs e)
+        {
+            undoToolStripMenuItem.Enabled = undo.Count != 0;
+            redoToolStripMenuItem.Enabled = redo.Count != 0;
+        }
         private async void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (undo.Count > 0)
@@ -225,24 +258,41 @@ namespace ImageProcessingBasics
         }
         private async void buttonGrayscaleMeanWeight_Click(object sender, EventArgs e)
         {
-            undo.Push(Helper.deepCloneBMP(outputBitmap));
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            clearOutput();
+            pushChange(Helper.deepCloneBMP(outputBitmap));
             outputBitmap = await AsyncWrapper.Wrap(() => Grayscale.MeanWeight(Helper.deepCloneBMP(outputBitmap)));
+            sw.Stop();
+            appendLog(String.Format("buttonGrayscaleMeanWeight_Click(): {0}ms", sw.ElapsedMilliseconds));
             await updateOutputRGBGraph();
         }
 
         private async void buttonGrayscaleMeanValue_Click(object sender, EventArgs e)
         {
-            undo.Push(Helper.deepCloneBMP(outputBitmap));
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            clearOutput();
+            pushChange(Helper.deepCloneBMP(outputBitmap));
             outputBitmap = await AsyncWrapper.Wrap(() => Grayscale.MeanValue(Helper.deepCloneBMP(outputBitmap)));
+            sw.Stop();
+            appendLog(String.Format("buttonGrayscaleMeanValue_Click(): {0}ms", sw.ElapsedMilliseconds));
             await updateOutputRGBGraph();
         }
 
         private async void buttonMaximum_Click(object sender, EventArgs e)
         {
-            undo.Push(Helper.deepCloneBMP(outputBitmap));
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            clearOutput();
+            pushChange(Helper.deepCloneBMP(outputBitmap));
             outputBitmap = await AsyncWrapper.Wrap(() => Grayscale.Max(Helper.deepCloneBMP(outputBitmap)));
+            sw.Stop();
+            appendLog(String.Format("buttonMaximum_Click(): {0}ms", sw.ElapsedMilliseconds));
             await updateOutputRGBGraph();
+            
         }
+
 
     }
 }
