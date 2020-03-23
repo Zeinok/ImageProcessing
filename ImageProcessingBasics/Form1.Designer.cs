@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBoxIn = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -39,11 +40,23 @@
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxIn = new System.Windows.Forms.GroupBox();
+            this.labelInB = new System.Windows.Forms.Label();
+            this.labelInG = new System.Windows.Forms.Label();
+            this.labelInR = new System.Windows.Forms.Label();
+            this.pictureBoxInBonly = new System.Windows.Forms.PictureBox();
+            this.pictureBoxInGonly = new System.Windows.Forms.PictureBox();
+            this.pictureBoxInRonly = new System.Windows.Forms.PictureBox();
             this.labelInImgSize = new System.Windows.Forms.Label();
             this.pictureBoxInBGraph = new System.Windows.Forms.PictureBox();
             this.pictureBoxInGGraph = new System.Windows.Forms.PictureBox();
             this.pictureBoxInRGraph = new System.Windows.Forms.PictureBox();
             this.groupBoxOut = new System.Windows.Forms.GroupBox();
+            this.labelB = new System.Windows.Forms.Label();
+            this.pictureBoxOutBonly = new System.Windows.Forms.PictureBox();
+            this.labelOutG = new System.Windows.Forms.Label();
+            this.pictureBoxOutGonly = new System.Windows.Forms.PictureBox();
+            this.labelOutR = new System.Windows.Forms.Label();
+            this.pictureBoxOutRonly = new System.Windows.Forms.PictureBox();
             this.labelOutImgSize = new System.Windows.Forms.Label();
             this.pictureBoxOutBGraph = new System.Windows.Forms.PictureBox();
             this.pictureBoxOutGGraph = new System.Windows.Forms.PictureBox();
@@ -107,25 +120,20 @@
             this.textBoxResizeX = new System.Windows.Forms.TextBox();
             this.labelResizeWidth = new System.Windows.Forms.Label();
             this.buttonTransformOrigin = new System.Windows.Forms.Button();
-            this.pictureBoxInBonly = new System.Windows.Forms.PictureBox();
-            this.pictureBoxInGonly = new System.Windows.Forms.PictureBox();
-            this.pictureBoxInRonly = new System.Windows.Forms.PictureBox();
-            this.pictureBoxOutBonly = new System.Windows.Forms.PictureBox();
-            this.pictureBoxOutGonly = new System.Windows.Forms.PictureBox();
-            this.pictureBoxOutRonly = new System.Windows.Forms.PictureBox();
-            this.labelInR = new System.Windows.Forms.Label();
-            this.labelInG = new System.Windows.Forms.Label();
-            this.labelInB = new System.Windows.Forms.Label();
-            this.labelOutR = new System.Windows.Forms.Label();
-            this.labelOutG = new System.Windows.Forms.Label();
-            this.labelB = new System.Windows.Forms.Label();
+            this.timerEnableControl = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBoxIn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInBonly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInGonly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInRonly)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInBGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInGGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInRGraph)).BeginInit();
             this.groupBoxOut.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutBonly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutGonly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutRonly)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutBGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutGGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutRGraph)).BeginInit();
@@ -149,12 +157,6 @@
             this.groupBoxThresholding.SuspendLayout();
             this.groupBoxGrayscale.SuspendLayout();
             this.groupBoxResize.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInBonly)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInGonly)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInRonly)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutBonly)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutGonly)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutRonly)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxIn
@@ -187,27 +189,27 @@
             this.toolStripDropDownButtonFile.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonFile.Image")));
             this.toolStripDropDownButtonFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonFile.Name = "toolStripDropDownButtonFile";
-            this.toolStripDropDownButtonFile.Size = new System.Drawing.Size(56, 22);
+            this.toolStripDropDownButtonFile.Size = new System.Drawing.Size(57, 22);
             this.toolStripDropDownButtonFile.Text = "File (&F)";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.openToolStripMenuItem.Text = "Open (&O)";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.saveToolStripMenuItem.Text = "Save (&S)";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.saveAsToolStripMenuItem.Text = "Save As (&A)";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -220,21 +222,21 @@
             this.toolStripDropDownButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonEdit.Image")));
             this.toolStripDropDownButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonEdit.Name = "toolStripDropDownButtonEdit";
-            this.toolStripDropDownButtonEdit.Size = new System.Drawing.Size(60, 22);
+            this.toolStripDropDownButtonEdit.Size = new System.Drawing.Size(61, 22);
             this.toolStripDropDownButtonEdit.Text = "Edit (&E)";
             this.toolStripDropDownButtonEdit.DropDownOpening += new System.EventHandler(this.toolStripDropDownButtonEdit_DropDownOpening);
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.undoToolStripMenuItem.Text = "Undo (&Z)";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.redoToolStripMenuItem.Text = "Redo (&Y)";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
@@ -257,6 +259,70 @@
             this.groupBoxIn.TabIndex = 3;
             this.groupBoxIn.TabStop = false;
             this.groupBoxIn.Text = "Original Image";
+            // 
+            // labelInB
+            // 
+            this.labelInB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelInB.ForeColor = System.Drawing.Color.Blue;
+            this.labelInB.Location = new System.Drawing.Point(218, 344);
+            this.labelInB.Name = "labelInB";
+            this.labelInB.Size = new System.Drawing.Size(100, 26);
+            this.labelInB.TabIndex = 10;
+            this.labelInB.Text = "B";
+            this.labelInB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelInG
+            // 
+            this.labelInG.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelInG.ForeColor = System.Drawing.Color.Green;
+            this.labelInG.Location = new System.Drawing.Point(112, 344);
+            this.labelInG.Name = "labelInG";
+            this.labelInG.Size = new System.Drawing.Size(100, 26);
+            this.labelInG.TabIndex = 9;
+            this.labelInG.Text = "G";
+            this.labelInG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelInR
+            // 
+            this.labelInR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelInR.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelInR.ForeColor = System.Drawing.Color.Red;
+            this.labelInR.Location = new System.Drawing.Point(6, 344);
+            this.labelInR.Name = "labelInR";
+            this.labelInR.Size = new System.Drawing.Size(100, 26);
+            this.labelInR.TabIndex = 8;
+            this.labelInR.Text = "R";
+            this.labelInR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxInBonly
+            // 
+            this.pictureBoxInBonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxInBonly.Location = new System.Drawing.Point(218, 373);
+            this.pictureBoxInBonly.Name = "pictureBoxInBonly";
+            this.pictureBoxInBonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxInBonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInBonly.TabIndex = 7;
+            this.pictureBoxInBonly.TabStop = false;
+            // 
+            // pictureBoxInGonly
+            // 
+            this.pictureBoxInGonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxInGonly.Location = new System.Drawing.Point(112, 373);
+            this.pictureBoxInGonly.Name = "pictureBoxInGonly";
+            this.pictureBoxInGonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxInGonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInGonly.TabIndex = 6;
+            this.pictureBoxInGonly.TabStop = false;
+            // 
+            // pictureBoxInRonly
+            // 
+            this.pictureBoxInRonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxInRonly.Location = new System.Drawing.Point(6, 373);
+            this.pictureBoxInRonly.Name = "pictureBoxInRonly";
+            this.pictureBoxInRonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxInRonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInRonly.TabIndex = 5;
+            this.pictureBoxInRonly.TabStop = false;
             // 
             // labelInImgSize
             // 
@@ -320,6 +386,70 @@
             this.groupBoxOut.TabIndex = 4;
             this.groupBoxOut.TabStop = false;
             this.groupBoxOut.Text = "Result Image";
+            // 
+            // labelB
+            // 
+            this.labelB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelB.ForeColor = System.Drawing.Color.Blue;
+            this.labelB.Location = new System.Drawing.Point(218, 344);
+            this.labelB.Name = "labelB";
+            this.labelB.Size = new System.Drawing.Size(100, 26);
+            this.labelB.TabIndex = 10;
+            this.labelB.Text = "B";
+            this.labelB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxOutBonly
+            // 
+            this.pictureBoxOutBonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxOutBonly.Location = new System.Drawing.Point(218, 373);
+            this.pictureBoxOutBonly.Name = "pictureBoxOutBonly";
+            this.pictureBoxOutBonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxOutBonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxOutBonly.TabIndex = 8;
+            this.pictureBoxOutBonly.TabStop = false;
+            // 
+            // labelOutG
+            // 
+            this.labelOutG.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelOutG.ForeColor = System.Drawing.Color.Green;
+            this.labelOutG.Location = new System.Drawing.Point(112, 344);
+            this.labelOutG.Name = "labelOutG";
+            this.labelOutG.Size = new System.Drawing.Size(100, 26);
+            this.labelOutG.TabIndex = 9;
+            this.labelOutG.Text = "G";
+            this.labelOutG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxOutGonly
+            // 
+            this.pictureBoxOutGonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxOutGonly.Location = new System.Drawing.Point(112, 373);
+            this.pictureBoxOutGonly.Name = "pictureBoxOutGonly";
+            this.pictureBoxOutGonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxOutGonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxOutGonly.TabIndex = 7;
+            this.pictureBoxOutGonly.TabStop = false;
+            // 
+            // labelOutR
+            // 
+            this.labelOutR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelOutR.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelOutR.ForeColor = System.Drawing.Color.Red;
+            this.labelOutR.Location = new System.Drawing.Point(6, 344);
+            this.labelOutR.Name = "labelOutR";
+            this.labelOutR.Size = new System.Drawing.Size(100, 26);
+            this.labelOutR.TabIndex = 8;
+            this.labelOutR.Text = "R";
+            this.labelOutR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxOutRonly
+            // 
+            this.pictureBoxOutRonly.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxOutRonly.Location = new System.Drawing.Point(6, 373);
+            this.pictureBoxOutRonly.Name = "pictureBoxOutRonly";
+            this.pictureBoxOutRonly.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxOutRonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxOutRonly.TabIndex = 6;
+            this.pictureBoxOutRonly.TabStop = false;
             // 
             // labelOutImgSize
             // 
@@ -938,133 +1068,10 @@
             this.buttonTransformOrigin.Text = "Origin";
             this.buttonTransformOrigin.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxInBonly
+            // timerEnableControl
             // 
-            this.pictureBoxInBonly.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxInBonly.Location = new System.Drawing.Point(218, 373);
-            this.pictureBoxInBonly.Name = "pictureBoxInBonly";
-            this.pictureBoxInBonly.Size = new System.Drawing.Size(100, 100);
-            this.pictureBoxInBonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxInBonly.TabIndex = 7;
-            this.pictureBoxInBonly.TabStop = false;
-            // 
-            // pictureBoxInGonly
-            // 
-            this.pictureBoxInGonly.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxInGonly.Location = new System.Drawing.Point(112, 373);
-            this.pictureBoxInGonly.Name = "pictureBoxInGonly";
-            this.pictureBoxInGonly.Size = new System.Drawing.Size(100, 100);
-            this.pictureBoxInGonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxInGonly.TabIndex = 6;
-            this.pictureBoxInGonly.TabStop = false;
-            // 
-            // pictureBoxInRonly
-            // 
-            this.pictureBoxInRonly.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxInRonly.Location = new System.Drawing.Point(6, 373);
-            this.pictureBoxInRonly.Name = "pictureBoxInRonly";
-            this.pictureBoxInRonly.Size = new System.Drawing.Size(100, 100);
-            this.pictureBoxInRonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxInRonly.TabIndex = 5;
-            this.pictureBoxInRonly.TabStop = false;
-            // 
-            // pictureBoxOutBonly
-            // 
-            this.pictureBoxOutBonly.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxOutBonly.Location = new System.Drawing.Point(218, 373);
-            this.pictureBoxOutBonly.Name = "pictureBoxOutBonly";
-            this.pictureBoxOutBonly.Size = new System.Drawing.Size(100, 100);
-            this.pictureBoxOutBonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxOutBonly.TabIndex = 8;
-            this.pictureBoxOutBonly.TabStop = false;
-            // 
-            // pictureBoxOutGonly
-            // 
-            this.pictureBoxOutGonly.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxOutGonly.Location = new System.Drawing.Point(112, 373);
-            this.pictureBoxOutGonly.Name = "pictureBoxOutGonly";
-            this.pictureBoxOutGonly.Size = new System.Drawing.Size(100, 100);
-            this.pictureBoxOutGonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxOutGonly.TabIndex = 7;
-            this.pictureBoxOutGonly.TabStop = false;
-            // 
-            // pictureBoxOutRonly
-            // 
-            this.pictureBoxOutRonly.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxOutRonly.Location = new System.Drawing.Point(6, 373);
-            this.pictureBoxOutRonly.Name = "pictureBoxOutRonly";
-            this.pictureBoxOutRonly.Size = new System.Drawing.Size(100, 100);
-            this.pictureBoxOutRonly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxOutRonly.TabIndex = 6;
-            this.pictureBoxOutRonly.TabStop = false;
-            // 
-            // labelInR
-            // 
-            this.labelInR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelInR.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelInR.ForeColor = System.Drawing.Color.Red;
-            this.labelInR.Location = new System.Drawing.Point(6, 344);
-            this.labelInR.Name = "labelInR";
-            this.labelInR.Size = new System.Drawing.Size(100, 26);
-            this.labelInR.TabIndex = 8;
-            this.labelInR.Text = "R";
-            this.labelInR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelInG
-            // 
-            this.labelInG.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelInG.ForeColor = System.Drawing.Color.Blue;
-            this.labelInG.Location = new System.Drawing.Point(112, 344);
-            this.labelInG.Name = "labelInG";
-            this.labelInG.Size = new System.Drawing.Size(100, 26);
-            this.labelInG.TabIndex = 9;
-            this.labelInG.Text = "G";
-            this.labelInG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelInB
-            // 
-            this.labelInB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelInB.ForeColor = System.Drawing.Color.Green;
-            this.labelInB.Location = new System.Drawing.Point(218, 344);
-            this.labelInB.Name = "labelInB";
-            this.labelInB.Size = new System.Drawing.Size(100, 26);
-            this.labelInB.TabIndex = 10;
-            this.labelInB.Text = "B";
-            this.labelInB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelOutR
-            // 
-            this.labelOutR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelOutR.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelOutR.ForeColor = System.Drawing.Color.Red;
-            this.labelOutR.Location = new System.Drawing.Point(6, 344);
-            this.labelOutR.Name = "labelOutR";
-            this.labelOutR.Size = new System.Drawing.Size(100, 26);
-            this.labelOutR.TabIndex = 8;
-            this.labelOutR.Text = "R";
-            this.labelOutR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelOutG
-            // 
-            this.labelOutG.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelOutG.ForeColor = System.Drawing.Color.Blue;
-            this.labelOutG.Location = new System.Drawing.Point(112, 344);
-            this.labelOutG.Name = "labelOutG";
-            this.labelOutG.Size = new System.Drawing.Size(100, 26);
-            this.labelOutG.TabIndex = 9;
-            this.labelOutG.Text = "G";
-            this.labelOutG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelB
-            // 
-            this.labelB.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelB.ForeColor = System.Drawing.Color.Green;
-            this.labelB.Location = new System.Drawing.Point(218, 344);
-            this.labelB.Name = "labelB";
-            this.labelB.Size = new System.Drawing.Size(100, 26);
-            this.labelB.TabIndex = 10;
-            this.labelB.Text = "B";
-            this.labelB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timerEnableControl.Enabled = true;
+            this.timerEnableControl.Tick += new System.EventHandler(this.timerEnableControl_Tick);
             // 
             // Form1
             // 
@@ -1085,11 +1092,17 @@
             this.toolStrip1.PerformLayout();
             this.groupBoxIn.ResumeLayout(false);
             this.groupBoxIn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInBonly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInGonly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInRonly)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInBGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInGGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInRGraph)).EndInit();
             this.groupBoxOut.ResumeLayout(false);
             this.groupBoxOut.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutBonly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutGonly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutRonly)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutBGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutGGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutRGraph)).EndInit();
@@ -1117,12 +1130,6 @@
             this.groupBoxGrayscale.ResumeLayout(false);
             this.groupBoxResize.ResumeLayout(false);
             this.groupBoxResize.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInBonly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInGonly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInRonly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutBonly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutGonly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutRonly)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1220,6 +1227,7 @@
         private System.Windows.Forms.Label labelB;
         private System.Windows.Forms.Label labelOutG;
         private System.Windows.Forms.Label labelOutR;
+        private System.Windows.Forms.Timer timerEnableControl;
     }
 }
 

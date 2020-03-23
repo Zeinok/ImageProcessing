@@ -240,6 +240,7 @@ namespace ImageProcessingBasics
         {
             if (undo.Count > 0)
             {
+                clearOutput();
                 redo.Push(outputBitmap);
                 outputBitmap = undo.Pop();
                 await updateOutputRGBGraph();
@@ -250,6 +251,7 @@ namespace ImageProcessingBasics
         {
             if (redo.Count > 0)
             {
+                clearOutput();
                 undo.Push(outputBitmap);
                 outputBitmap = redo.Pop();
                 await updateOutputRGBGraph();
@@ -293,6 +295,10 @@ namespace ImageProcessingBasics
             
         }
 
-
+        private void timerEnableControl_Tick(object sender, EventArgs e)
+        {
+            bool disableControl = pictureBoxOut.Image == null || pictureBoxOutBGraph.Image == null || pictureBoxOutBonly.Image == null || pictureBoxOutGGraph.Image == null || pictureBoxOutGonly.Image == null || pictureBoxOutRGraph.Image == null || pictureBoxOutRonly.Image == null;
+            groupBoxManipulation.Enabled = !disableControl;
+        }
     }
 }

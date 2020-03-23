@@ -34,7 +34,7 @@ namespace ImageProcessingBasics
                     {
                         byte* pixel = imgPtr + x * bytesPerPixel + y * bd.Stride;
                         byte* newPixel = newImgPtr + x * newBytesPerPixel + y * newBD.Stride;
-                        int mean = (int)(pixel[2] * 0.299 + pixel[1] * 0.587 + pixel[0] * 0.114);
+                        int mean = (int)Math.Round(pixel[2] * 0.299 + pixel[1] * 0.587 + pixel[0] * 0.114);
                         if (mean > 255) mean = 255;
                         for (int i = 0; i < 4; i++)
                             newPixel[i] = 255;
@@ -74,8 +74,7 @@ namespace ImageProcessingBasics
                     {
                         byte* pixel = imgPtr + x * bytesPerPixel + y * bd.Stride;
                         byte* newPixel = newImgPtr + x * newBytesPerPixel + y * newBD.Stride;
-                        int mean = pixel[2] + pixel[1] + pixel[0];
-                        mean /= 3;
+                        int mean = (int)Math.Round((double)(pixel[2] + pixel[1] + pixel[0])/3.0, MidpointRounding.AwayFromZero);
                         if (mean > 255) mean = 255;
                         for (int i = 0; i < 4; i++)
                             newPixel[i] = 255;
