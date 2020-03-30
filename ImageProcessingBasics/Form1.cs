@@ -140,6 +140,21 @@ namespace ImageProcessingBasics
             undo.Push(change);
             redo.Clear();
         }
+
+        private async Task wrapEffect(Func<Bitmap> func)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            clearOutput();
+            pushChange(Helper.deepCloneBMP(outputBitmap));
+            outputBitmap = await AsyncWrapper.Wrap(func);
+            sw.Stop();
+            appendLog(String.Format("{0}: {1}ms", func.Method.Name, sw.ElapsedMilliseconds));
+            await updateOutputRGBGraph();
+        }
+        //////////////////////////////
+        /// End of helper function ///
+        //////////////////////////////
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             if (inputBitmap != null && inputBitmapChanged)
@@ -171,6 +186,12 @@ namespace ImageProcessingBasics
                 pictureBoxOutRonly, pictureBoxOutGonly, pictureBoxOutBonly
             };
         }
+
+        private void timerEnableControl_Tick(object sender, EventArgs e)
+        {
+            bool disableControl = pictureBoxOut.Image == null || pictureBoxOutBGraph.Image == null || pictureBoxOutBonly.Image == null || pictureBoxOutGGraph.Image == null || pictureBoxOutGonly.Image == null || pictureBoxOutRGraph.Image == null || pictureBoxOutRonly.Image == null;
+            groupBoxManipulation.Enabled = !disableControl;
+        }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //try
@@ -186,20 +207,9 @@ namespace ImageProcessingBasics
             //fs.Close();
             appendLog(String.Format("File {0} opened.", ofd.SafeFileName));
 
-
-
             GC.Collect();
             undo.Clear();
             redo.Clear();
-
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                appendLog(String.Format("Exception occured during opening file: {0}", ex.Message));
-            //#if DEBUG
-            //                throw ex;
-            //#endif
-            //            }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -260,45 +270,47 @@ namespace ImageProcessingBasics
         }
         private async void buttonGrayscaleMeanWeight_Click(object sender, EventArgs e)
         {
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            clearOutput();
-            pushChange(Helper.deepCloneBMP(outputBitmap));
-            outputBitmap = await AsyncWrapper.Wrap(() => Grayscale.MeanWeight(Helper.deepCloneBMP(outputBitmap)));
-            sw.Stop();
-            appendLog(String.Format("buttonGrayscaleMeanWeight_Click(): {0}ms", sw.ElapsedMilliseconds));
-            await updateOutputRGBGraph();
+            await wrapEffect(() => Grayscale.MeanWeight(Helper.deepCloneBMP(outputBitmap)));
         }
 
         private async void buttonGrayscaleMeanValue_Click(object sender, EventArgs e)
         {
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            clearOutput();
-            pushChange(Helper.deepCloneBMP(outputBitmap));
-            outputBitmap = await AsyncWrapper.Wrap(() => Grayscale.MeanValue(Helper.deepCloneBMP(outputBitmap)));
-            sw.Stop();
-            appendLog(String.Format("buttonGrayscaleMeanValue_Click(): {0}ms", sw.ElapsedMilliseconds));
-            await updateOutputRGBGraph();
+            await wrapEffect(() => Grayscale.MeanValue(Helper.deepCloneBMP(outputBitmap)));
         }
 
         private async void buttonMaximum_Click(object sender, EventArgs e)
         {
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            clearOutput();
-            pushChange(Helper.deepCloneBMP(outputBitmap));
-            outputBitmap = await AsyncWrapper.Wrap(() => Grayscale.Max(Helper.deepCloneBMP(outputBitmap)));
-            sw.Stop();
-            appendLog(String.Format("buttonMaximum_Click(): {0}ms", sw.ElapsedMilliseconds));
-            await updateOutputRGBGraph();
-            
+            await wrapEffect(() => Grayscale.Max(Helper.deepCloneBMP(outputBitmap)));
         }
 
-        private void timerEnableControl_Tick(object sender, EventArgs e)
+
+        private async void buttonContrastNegative_Click(object sender, EventArgs e)
         {
-            bool disableControl = pictureBoxOut.Image == null || pictureBoxOutBGraph.Image == null || pictureBoxOutBonly.Image == null || pictureBoxOutGGraph.Image == null || pictureBoxOutGonly.Image == null || pictureBoxOutRGraph.Image == null || pictureBoxOutRonly.Image == null;
-            groupBoxManipulation.Enabled = !disableControl;
+            await wrapEffect(() => Contrast.Negative(Helper.deepCloneBMP(outputBitmap)));
+        }
+
+        private async void buttonContrastLogarithmic_Click(object sender, EventArgs e)
+        {
+            InputDialog id = new InputDialog();
+            id.Text = "C";
+            id.Type = typeof(double);
+            if (id.ShowDialog() != DialogResult.OK) return;
+            await wrapEffect(() => Contrast.LogTransform((double)id.Result, Helper.deepCloneBMP(outputBitmap)));
+        }
+
+        private async void buttonPowerLaw_Click(object sender, EventArgs e)
+        {
+            InputDialog id = new InputDialog();
+            id.Text = "C";
+            id.Type = typeof(double);
+            if (id.ShowDialog() != DialogResult.OK) return;
+            double c = (double)id.Result;
+            id = new InputDialog();
+            id.Text = "gamma";
+            id.Type = typeof(double);
+            if (id.ShowDialog() != DialogResult.OK) return;
+            double gamma = (double)id.Result;
+            await wrapEffect(() => Contrast.PowerLawTransform(c, gamma, Helper.deepCloneBMP(outputBitmap)));
         }
     }
 }

@@ -121,6 +121,7 @@
             this.labelResizeWidth = new System.Windows.Forms.Label();
             this.buttonTransformOrigin = new System.Windows.Forms.Button();
             this.timerEnableControl = new System.Windows.Forms.Timer(this.components);
+            this.buttonPowerLaw = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBoxIn.SuspendLayout();
@@ -581,6 +582,8 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(213, 49);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 23);
@@ -645,6 +648,8 @@
             // 
             // buttonSegmentationKmeans
             // 
+            this.buttonSegmentationKmeans.Enabled = false;
+            this.buttonSegmentationKmeans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSegmentationKmeans.Location = new System.Drawing.Point(263, 77);
             this.buttonSegmentationKmeans.Name = "buttonSegmentationKmeans";
             this.buttonSegmentationKmeans.Size = new System.Drawing.Size(75, 23);
@@ -685,6 +690,8 @@
             // 
             // ButtonEncryptionClear
             // 
+            this.ButtonEncryptionClear.Enabled = false;
+            this.ButtonEncryptionClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ButtonEncryptionClear.Location = new System.Drawing.Point(263, 79);
             this.ButtonEncryptionClear.Name = "ButtonEncryptionClear";
             this.ButtonEncryptionClear.Size = new System.Drawing.Size(75, 23);
@@ -694,6 +701,8 @@
             // 
             // ButtonEncryptionDecrypt
             // 
+            this.ButtonEncryptionDecrypt.Enabled = false;
+            this.ButtonEncryptionDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ButtonEncryptionDecrypt.Location = new System.Drawing.Point(263, 50);
             this.ButtonEncryptionDecrypt.Name = "ButtonEncryptionDecrypt";
             this.ButtonEncryptionDecrypt.Size = new System.Drawing.Size(75, 23);
@@ -703,6 +712,8 @@
             // 
             // buttonEncryptionEncrypt
             // 
+            this.buttonEncryptionEncrypt.Enabled = false;
+            this.buttonEncryptionEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonEncryptionEncrypt.Location = new System.Drawing.Point(263, 21);
             this.buttonEncryptionEncrypt.Name = "buttonEncryptionEncrypt";
             this.buttonEncryptionEncrypt.Size = new System.Drawing.Size(75, 23);
@@ -734,6 +745,8 @@
             // 
             // buttonMorphlogyClosing
             // 
+            this.buttonMorphlogyClosing.Enabled = false;
+            this.buttonMorphlogyClosing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonMorphlogyClosing.Location = new System.Drawing.Point(249, 21);
             this.buttonMorphlogyClosing.Name = "buttonMorphlogyClosing";
             this.buttonMorphlogyClosing.Size = new System.Drawing.Size(75, 23);
@@ -743,6 +756,8 @@
             // 
             // buttonMorphologyOpening
             // 
+            this.buttonMorphologyOpening.Enabled = false;
+            this.buttonMorphologyOpening.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonMorphologyOpening.Location = new System.Drawing.Point(168, 21);
             this.buttonMorphologyOpening.Name = "buttonMorphologyOpening";
             this.buttonMorphologyOpening.Size = new System.Drawing.Size(75, 23);
@@ -752,6 +767,8 @@
             // 
             // buttonMorphologyDilation
             // 
+            this.buttonMorphologyDilation.Enabled = false;
+            this.buttonMorphologyDilation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonMorphologyDilation.Location = new System.Drawing.Point(87, 21);
             this.buttonMorphologyDilation.Name = "buttonMorphologyDilation";
             this.buttonMorphologyDilation.Size = new System.Drawing.Size(75, 23);
@@ -761,6 +778,8 @@
             // 
             // buttonMorphologyErosion
             // 
+            this.buttonMorphologyErosion.Enabled = false;
+            this.buttonMorphologyErosion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonMorphologyErosion.Location = new System.Drawing.Point(6, 21);
             this.buttonMorphologyErosion.Name = "buttonMorphologyErosion";
             this.buttonMorphologyErosion.Size = new System.Drawing.Size(75, 23);
@@ -793,6 +812,8 @@
             // 
             // buttonSpaceFillerKirsch
             // 
+            this.buttonSpaceFillerKirsch.Enabled = false;
+            this.buttonSpaceFillerKirsch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSpaceFillerKirsch.Location = new System.Drawing.Point(168, 50);
             this.buttonSpaceFillerKirsch.Name = "buttonSpaceFillerKirsch";
             this.buttonSpaceFillerKirsch.Size = new System.Drawing.Size(75, 23);
@@ -802,6 +823,8 @@
             // 
             // buttonSpaceFillerLaplacian
             // 
+            this.buttonSpaceFillerLaplacian.Enabled = false;
+            this.buttonSpaceFillerLaplacian.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSpaceFillerLaplacian.Location = new System.Drawing.Point(87, 50);
             this.buttonSpaceFillerLaplacian.Name = "buttonSpaceFillerLaplacian";
             this.buttonSpaceFillerLaplacian.Size = new System.Drawing.Size(75, 23);
@@ -811,6 +834,8 @@
             // 
             // buttonSpaceFillerSobel
             // 
+            this.buttonSpaceFillerSobel.Enabled = false;
+            this.buttonSpaceFillerSobel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSpaceFillerSobel.Location = new System.Drawing.Point(6, 50);
             this.buttonSpaceFillerSobel.Name = "buttonSpaceFillerSobel";
             this.buttonSpaceFillerSobel.Size = new System.Drawing.Size(75, 23);
@@ -820,6 +845,8 @@
             // 
             // buttonSpaceFillerMean
             // 
+            this.buttonSpaceFillerMean.Enabled = false;
+            this.buttonSpaceFillerMean.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSpaceFillerMean.Location = new System.Drawing.Point(87, 21);
             this.buttonSpaceFillerMean.Name = "buttonSpaceFillerMean";
             this.buttonSpaceFillerMean.Size = new System.Drawing.Size(75, 23);
@@ -829,6 +856,8 @@
             // 
             // buttonSpaceFillerMedium
             // 
+            this.buttonSpaceFillerMedium.Enabled = false;
+            this.buttonSpaceFillerMedium.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSpaceFillerMedium.Location = new System.Drawing.Point(6, 21);
             this.buttonSpaceFillerMedium.Name = "buttonSpaceFillerMedium";
             this.buttonSpaceFillerMedium.Size = new System.Drawing.Size(75, 23);
@@ -847,6 +876,7 @@
             // 
             // groupBoxContrast
             // 
+            this.groupBoxContrast.Controls.Add(this.buttonPowerLaw);
             this.groupBoxContrast.Controls.Add(this.buttonContrastLogarithmic);
             this.groupBoxContrast.Controls.Add(this.buttonContrastNegative);
             this.groupBoxContrast.Controls.Add(this.buttonContrastSharpening);
@@ -866,6 +896,7 @@
             this.buttonContrastLogarithmic.TabIndex = 3;
             this.buttonContrastLogarithmic.Text = "Logarithmic";
             this.buttonContrastLogarithmic.UseVisualStyleBackColor = true;
+            this.buttonContrastLogarithmic.Click += new System.EventHandler(this.buttonContrastLogarithmic_Click);
             // 
             // buttonContrastNegative
             // 
@@ -875,9 +906,12 @@
             this.buttonContrastNegative.TabIndex = 2;
             this.buttonContrastNegative.Text = "Negative";
             this.buttonContrastNegative.UseVisualStyleBackColor = true;
+            this.buttonContrastNegative.Click += new System.EventHandler(this.buttonContrastNegative_Click);
             // 
             // buttonContrastSharpening
             // 
+            this.buttonContrastSharpening.Enabled = false;
+            this.buttonContrastSharpening.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonContrastSharpening.Location = new System.Drawing.Point(6, 50);
             this.buttonContrastSharpening.Name = "buttonContrastSharpening";
             this.buttonContrastSharpening.Size = new System.Drawing.Size(75, 23);
@@ -887,6 +921,8 @@
             // 
             // buttonContrastHistogramEqualization
             // 
+            this.buttonContrastHistogramEqualization.Enabled = false;
+            this.buttonContrastHistogramEqualization.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonContrastHistogramEqualization.Location = new System.Drawing.Point(6, 21);
             this.buttonContrastHistogramEqualization.Name = "buttonContrastHistogramEqualization";
             this.buttonContrastHistogramEqualization.Size = new System.Drawing.Size(150, 23);
@@ -918,6 +954,8 @@
             // 
             // buttonBrightnessDarken
             // 
+            this.buttonBrightnessDarken.Enabled = false;
+            this.buttonBrightnessDarken.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonBrightnessDarken.Location = new System.Drawing.Point(112, 21);
             this.buttonBrightnessDarken.Name = "buttonBrightnessDarken";
             this.buttonBrightnessDarken.Size = new System.Drawing.Size(100, 23);
@@ -927,6 +965,8 @@
             // 
             // buttonBrightnessBrighten
             // 
+            this.buttonBrightnessBrighten.Enabled = false;
+            this.buttonBrightnessBrighten.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonBrightnessBrighten.Location = new System.Drawing.Point(6, 21);
             this.buttonBrightnessBrighten.Name = "buttonBrightnessBrighten";
             this.buttonBrightnessBrighten.Size = new System.Drawing.Size(100, 23);
@@ -946,6 +986,8 @@
             // 
             // buttonThresholdingOtsuMethod
             // 
+            this.buttonThresholdingOtsuMethod.Enabled = false;
+            this.buttonThresholdingOtsuMethod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonThresholdingOtsuMethod.Location = new System.Drawing.Point(6, 21);
             this.buttonThresholdingOtsuMethod.Name = "buttonThresholdingOtsuMethod";
             this.buttonThresholdingOtsuMethod.Size = new System.Drawing.Size(100, 23);
@@ -997,6 +1039,8 @@
             // 
             // buttonTransformReverse
             // 
+            this.buttonTransformReverse.Enabled = false;
+            this.buttonTransformReverse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonTransformReverse.Location = new System.Drawing.Point(6, 69);
             this.buttonTransformReverse.Name = "buttonTransformReverse";
             this.buttonTransformReverse.Size = new System.Drawing.Size(75, 23);
@@ -1020,6 +1064,8 @@
             // 
             // buttonDoResize
             // 
+            this.buttonDoResize.Enabled = false;
+            this.buttonDoResize.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDoResize.Location = new System.Drawing.Point(104, 20);
             this.buttonDoResize.Name = "buttonDoResize";
             this.buttonDoResize.Size = new System.Drawing.Size(75, 51);
@@ -1061,6 +1107,8 @@
             // 
             // buttonTransformOrigin
             // 
+            this.buttonTransformOrigin.Enabled = false;
+            this.buttonTransformOrigin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonTransformOrigin.Location = new System.Drawing.Point(6, 41);
             this.buttonTransformOrigin.Name = "buttonTransformOrigin";
             this.buttonTransformOrigin.Size = new System.Drawing.Size(75, 23);
@@ -1072,6 +1120,16 @@
             // 
             this.timerEnableControl.Enabled = true;
             this.timerEnableControl.Tick += new System.EventHandler(this.timerEnableControl_Tick);
+            // 
+            // buttonPowerLaw
+            // 
+            this.buttonPowerLaw.Location = new System.Drawing.Point(249, 50);
+            this.buttonPowerLaw.Name = "buttonPowerLaw";
+            this.buttonPowerLaw.Size = new System.Drawing.Size(75, 23);
+            this.buttonPowerLaw.TabIndex = 4;
+            this.buttonPowerLaw.Text = "Power-Law";
+            this.buttonPowerLaw.UseVisualStyleBackColor = true;
+            this.buttonPowerLaw.Click += new System.EventHandler(this.buttonPowerLaw_Click);
             // 
             // Form1
             // 
@@ -1228,6 +1286,7 @@
         private System.Windows.Forms.Label labelOutG;
         private System.Windows.Forms.Label labelOutR;
         private System.Windows.Forms.Timer timerEnableControl;
+        private System.Windows.Forms.Button buttonPowerLaw;
     }
 }
 
