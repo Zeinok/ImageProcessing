@@ -27,10 +27,22 @@ namespace ImageProcessingBasics
             _bytesPerPixel = Bitmap.GetPixelFormatSize(BitmapData.PixelFormat) / 8;
         }
 
-        public byte* GetPixel(int x, int y)
+        public byte* GetPixelPtr(int x, int y)
         {
             byte* _ = _imgPtr + x * _bytesPerPixel + y * BitmapData.Stride;
             return _;
+        }
+
+        public int* GetPixelIntPtr(int x, int y)
+        {
+            int* _ = (int*)this.GetPixelPtr(x, y);
+            return _;
+        }
+
+        public Color GetPixelColor(int x, int y)
+        {
+            int* _ = this.GetPixelIntPtr(x, y);
+            return Color.FromArgb(*_);
         }
 
         public void Dispose()

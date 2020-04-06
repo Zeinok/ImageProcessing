@@ -98,6 +98,7 @@
             this.buttonSpaceFillerMedium = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBoxContrast = new System.Windows.Forms.GroupBox();
+            this.buttonPowerLaw = new System.Windows.Forms.Button();
             this.buttonContrastLogarithmic = new System.Windows.Forms.Button();
             this.buttonContrastNegative = new System.Windows.Forms.Button();
             this.buttonContrastSharpening = new System.Windows.Forms.Button();
@@ -121,7 +122,6 @@
             this.labelResizeWidth = new System.Windows.Forms.Label();
             this.buttonTransformOrigin = new System.Windows.Forms.Button();
             this.timerEnableControl = new System.Windows.Forms.Timer(this.components);
-            this.buttonPowerLaw = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBoxIn.SuspendLayout();
@@ -888,6 +888,16 @@
             this.groupBoxContrast.TabStop = false;
             this.groupBoxContrast.Text = "Contrast";
             // 
+            // buttonPowerLaw
+            // 
+            this.buttonPowerLaw.Location = new System.Drawing.Point(249, 50);
+            this.buttonPowerLaw.Name = "buttonPowerLaw";
+            this.buttonPowerLaw.Size = new System.Drawing.Size(75, 23);
+            this.buttonPowerLaw.TabIndex = 4;
+            this.buttonPowerLaw.Text = "Power-Law";
+            this.buttonPowerLaw.UseVisualStyleBackColor = true;
+            this.buttonPowerLaw.Click += new System.EventHandler(this.buttonPowerLaw_Click);
+            // 
             // buttonContrastLogarithmic
             // 
             this.buttonContrastLogarithmic.Location = new System.Drawing.Point(168, 50);
@@ -921,14 +931,13 @@
             // 
             // buttonContrastHistogramEqualization
             // 
-            this.buttonContrastHistogramEqualization.Enabled = false;
-            this.buttonContrastHistogramEqualization.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonContrastHistogramEqualization.Location = new System.Drawing.Point(6, 21);
             this.buttonContrastHistogramEqualization.Name = "buttonContrastHistogramEqualization";
             this.buttonContrastHistogramEqualization.Size = new System.Drawing.Size(150, 23);
             this.buttonContrastHistogramEqualization.TabIndex = 0;
             this.buttonContrastHistogramEqualization.Text = "Histogram Equalization";
             this.buttonContrastHistogramEqualization.UseVisualStyleBackColor = true;
+            this.buttonContrastHistogramEqualization.Click += new System.EventHandler(this.buttonContrastHistogramEqualization_Click);
             // 
             // panel1
             // 
@@ -1120,16 +1129,6 @@
             // 
             this.timerEnableControl.Enabled = true;
             this.timerEnableControl.Tick += new System.EventHandler(this.timerEnableControl_Tick);
-            // 
-            // buttonPowerLaw
-            // 
-            this.buttonPowerLaw.Location = new System.Drawing.Point(249, 50);
-            this.buttonPowerLaw.Name = "buttonPowerLaw";
-            this.buttonPowerLaw.Size = new System.Drawing.Size(75, 23);
-            this.buttonPowerLaw.TabIndex = 4;
-            this.buttonPowerLaw.Text = "Power-Law";
-            this.buttonPowerLaw.UseVisualStyleBackColor = true;
-            this.buttonPowerLaw.Click += new System.EventHandler(this.buttonPowerLaw_Click);
             // 
             // Form1
             // 

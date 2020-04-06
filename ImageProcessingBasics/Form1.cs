@@ -55,6 +55,7 @@ namespace ImageProcessingBasics
         public Form1()
         {
             InitializeComponent();
+
         }
         
         private async Task<bool> loadImg(Stream s)
@@ -311,6 +312,11 @@ namespace ImageProcessingBasics
             if (id.ShowDialog() != DialogResult.OK) return;
             double gamma = (double)id.Result;
             await wrapEffect(() => Contrast.PowerLawTransform(c, gamma, Helper.deepCloneBMP(outputBitmap)));
+        }
+
+        private async void buttonContrastHistogramEqualization_Click(object sender, EventArgs e)
+        {
+            await wrapEffect(() => Contrast.HistogramEqualization(Helper.deepCloneBMP(outputBitmap)));
         }
     }
 }
