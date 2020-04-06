@@ -58,6 +58,8 @@ namespace ImageProcessingBasics
                 }
                 // draw retBmp
                 long totalPixels = retBmp.Width * retBmp.Height;
+                long RcdfMin = Rcdf.Values.Min(), GcdfMin = Gcdf.Values.Min(), BcdfMin = Bcdf.Values.Min();
+                
                 unsafe
                 {
                     for (int y = 0; y < retBmp.Height; y++)
@@ -68,9 +70,9 @@ namespace ImageProcessingBasics
                             Color oldColor = bl.GetPixelColor(x, y);
                             int* newColorIntPtr = rbl.GetPixelIntPtr(x, y);
                             int R, G, B;
-                            R = (int)Math.Round(Rcdf[oldColor.R] * 255.0/ totalPixels);
-                            G = (int)Math.Round(Gcdf[oldColor.G] * 255.0 / totalPixels);
-                            B = (int)Math.Round(Bcdf[oldColor.B] * 255.0 / totalPixels);
+                            R = (int)Math.Round((Rcdf[oldColor.R] - RcdfMin) * 255.0/ (totalPixels - RcdfMin));
+                            G = (int)Math.Round((Gcdf[oldColor.G] - GcdfMin) * 255.0 / (totalPixels - GcdfMin));
+                            B = (int)Math.Round((Bcdf[oldColor.B] - BcdfMin) * 255.0 / (totalPixels - BcdfMin));
                             Color newColor = Color.FromArgb(oldColor.A, R, G, B);
                             *newColorIntPtr = newColor.ToArgb();
                         }
