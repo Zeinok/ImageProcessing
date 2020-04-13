@@ -187,7 +187,9 @@ namespace ImageProcessingBasics
                 pictureBoxOutRonly, pictureBoxOutGonly, pictureBoxOutBonly
             };
         }
-
+        private void pictureBoxOut_Click(object sender, EventArgs e) {
+            if(outputBitmap!=null) new ImageViewDialog(outputBitmap).ShowDialog();
+        }
         private void timerEnableControl_Tick(object sender, EventArgs e)
         {
             bool disableControl = pictureBoxOut.Image == null || pictureBoxOutBGraph.Image == null || pictureBoxOutBonly.Image == null || pictureBoxOutGGraph.Image == null || pictureBoxOutGonly.Image == null || pictureBoxOutRGraph.Image == null || pictureBoxOutRonly.Image == null;
@@ -334,5 +336,7 @@ namespace ImageProcessingBasics
         private async void buttonSpaceFilterMax_Click(object sender, EventArgs e) {
             await wrapEffect(() => SpaceFilter.Max(Helper.deepCloneBMP(outputBitmap)));
         }
+
+
     }
 }

@@ -88,6 +88,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageViewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageViewDialog.Designer.cs">
+      <DependentUpon>ImageViewDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilies\AsyncWrapper.cs" />
     <Compile Include="Utilies\BitmapLocker.cs" />
     <Compile Include="Routines\Contrast.cs" />
@@ -111,6 +117,9 @@
     <Compile Include="Routines\SpaceFilter.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageViewDialog.resx">
+      <DependentUpon>ImageViewDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputDialog.resx">
       <DependentUpon>InputDialog.cs</DependentUpon>

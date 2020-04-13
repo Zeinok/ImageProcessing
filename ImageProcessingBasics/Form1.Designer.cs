@@ -505,6 +505,7 @@
             this.pictureBoxOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxOut.TabIndex = 0;
             this.pictureBoxOut.TabStop = false;
+            this.pictureBoxOut.Click += new System.EventHandler(this.pictureBoxOut_Click);
             // 
             // groupBoxLog
             // 
