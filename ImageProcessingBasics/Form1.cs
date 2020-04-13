@@ -318,5 +318,21 @@ namespace ImageProcessingBasics
         {
             await wrapEffect(() => Contrast.HistogramEqualization(Helper.deepCloneBMP(outputBitmap)));
         }
+
+        private async void buttonSpaceFillerMedium_Click(object sender, EventArgs e) {
+            await wrapEffect(() => SpaceFilter.Median(Helper.deepCloneBMP(outputBitmap)));
+        }
+
+        private async void buttonSpaceFillerMean_Click(object sender, EventArgs e) {
+            await wrapEffect(() => SpaceFilter.Mean(Helper.deepCloneBMP(outputBitmap)));
+        }
+
+        private async void buttonSpaceFilterMin_Click(object sender, EventArgs e) {
+            await wrapEffect(() => SpaceFilter.Min(Helper.deepCloneBMP(outputBitmap)));
+        }
+
+        private async void buttonSpaceFilterMax_Click(object sender, EventArgs e) {
+            await wrapEffect(() => SpaceFilter.Max(Helper.deepCloneBMP(outputBitmap)));
+        }
     }
 }

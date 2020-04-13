@@ -90,12 +90,12 @@
             this.buttonMorphologyDilation = new System.Windows.Forms.Button();
             this.buttonMorphologyErosion = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.groupBoxSpaceFiller = new System.Windows.Forms.GroupBox();
-            this.buttonSpaceFillerKirsch = new System.Windows.Forms.Button();
-            this.buttonSpaceFillerLaplacian = new System.Windows.Forms.Button();
-            this.buttonSpaceFillerSobel = new System.Windows.Forms.Button();
-            this.buttonSpaceFillerMean = new System.Windows.Forms.Button();
-            this.buttonSpaceFillerMedium = new System.Windows.Forms.Button();
+            this.groupBoxSpaceFilter = new System.Windows.Forms.GroupBox();
+            this.buttonSpaceFilterKirsch = new System.Windows.Forms.Button();
+            this.buttonSpaceFilterLaplacian = new System.Windows.Forms.Button();
+            this.buttonSpaceFilterSobel = new System.Windows.Forms.Button();
+            this.buttonSpaceFilterMean = new System.Windows.Forms.Button();
+            this.buttonSpaceFilterMedium = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBoxContrast = new System.Windows.Forms.GroupBox();
             this.buttonPowerLaw = new System.Windows.Forms.Button();
@@ -122,6 +122,8 @@
             this.labelResizeWidth = new System.Windows.Forms.Label();
             this.buttonTransformOrigin = new System.Windows.Forms.Button();
             this.timerEnableControl = new System.Windows.Forms.Timer(this.components);
+            this.buttonSpaceFilterMin = new System.Windows.Forms.Button();
+            this.buttonSpaceFilterMax = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBoxIn.SuspendLayout();
@@ -150,7 +152,7 @@
             this.panel4.SuspendLayout();
             this.groupBoxMorphology.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.groupBoxSpaceFiller.SuspendLayout();
+            this.groupBoxSpaceFilter.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBoxContrast.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -790,80 +792,80 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Info;
-            this.panel3.Controls.Add(this.groupBoxSpaceFiller);
+            this.panel3.Controls.Add(this.groupBoxSpaceFilter);
             this.panel3.Location = new System.Drawing.Point(6, 382);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(350, 87);
             this.panel3.TabIndex = 5;
             // 
-            // groupBoxSpaceFiller
+            // groupBoxSpaceFilter
             // 
-            this.groupBoxSpaceFiller.Controls.Add(this.buttonSpaceFillerKirsch);
-            this.groupBoxSpaceFiller.Controls.Add(this.buttonSpaceFillerLaplacian);
-            this.groupBoxSpaceFiller.Controls.Add(this.buttonSpaceFillerSobel);
-            this.groupBoxSpaceFiller.Controls.Add(this.buttonSpaceFillerMean);
-            this.groupBoxSpaceFiller.Controls.Add(this.buttonSpaceFillerMedium);
-            this.groupBoxSpaceFiller.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxSpaceFiller.Name = "groupBoxSpaceFiller";
-            this.groupBoxSpaceFiller.Size = new System.Drawing.Size(344, 81);
-            this.groupBoxSpaceFiller.TabIndex = 0;
-            this.groupBoxSpaceFiller.TabStop = false;
-            this.groupBoxSpaceFiller.Text = "Space Filler";
+            this.groupBoxSpaceFilter.Controls.Add(this.buttonSpaceFilterMax);
+            this.groupBoxSpaceFilter.Controls.Add(this.buttonSpaceFilterMin);
+            this.groupBoxSpaceFilter.Controls.Add(this.buttonSpaceFilterKirsch);
+            this.groupBoxSpaceFilter.Controls.Add(this.buttonSpaceFilterLaplacian);
+            this.groupBoxSpaceFilter.Controls.Add(this.buttonSpaceFilterSobel);
+            this.groupBoxSpaceFilter.Controls.Add(this.buttonSpaceFilterMean);
+            this.groupBoxSpaceFilter.Controls.Add(this.buttonSpaceFilterMedium);
+            this.groupBoxSpaceFilter.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxSpaceFilter.Name = "groupBoxSpaceFilter";
+            this.groupBoxSpaceFilter.Size = new System.Drawing.Size(344, 81);
+            this.groupBoxSpaceFilter.TabIndex = 0;
+            this.groupBoxSpaceFilter.TabStop = false;
+            this.groupBoxSpaceFilter.Text = "Space Filter";
             // 
-            // buttonSpaceFillerKirsch
+            // buttonSpaceFilterKirsch
             // 
-            this.buttonSpaceFillerKirsch.Enabled = false;
-            this.buttonSpaceFillerKirsch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSpaceFillerKirsch.Location = new System.Drawing.Point(168, 50);
-            this.buttonSpaceFillerKirsch.Name = "buttonSpaceFillerKirsch";
-            this.buttonSpaceFillerKirsch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSpaceFillerKirsch.TabIndex = 4;
-            this.buttonSpaceFillerKirsch.Text = "Kirsch";
-            this.buttonSpaceFillerKirsch.UseVisualStyleBackColor = true;
+            this.buttonSpaceFilterKirsch.Enabled = false;
+            this.buttonSpaceFilterKirsch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSpaceFilterKirsch.Location = new System.Drawing.Point(168, 50);
+            this.buttonSpaceFilterKirsch.Name = "buttonSpaceFilterKirsch";
+            this.buttonSpaceFilterKirsch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpaceFilterKirsch.TabIndex = 4;
+            this.buttonSpaceFilterKirsch.Text = "Kirsch";
+            this.buttonSpaceFilterKirsch.UseVisualStyleBackColor = true;
             // 
-            // buttonSpaceFillerLaplacian
+            // buttonSpaceFilterLaplacian
             // 
-            this.buttonSpaceFillerLaplacian.Enabled = false;
-            this.buttonSpaceFillerLaplacian.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSpaceFillerLaplacian.Location = new System.Drawing.Point(87, 50);
-            this.buttonSpaceFillerLaplacian.Name = "buttonSpaceFillerLaplacian";
-            this.buttonSpaceFillerLaplacian.Size = new System.Drawing.Size(75, 23);
-            this.buttonSpaceFillerLaplacian.TabIndex = 3;
-            this.buttonSpaceFillerLaplacian.Text = "Laplacian";
-            this.buttonSpaceFillerLaplacian.UseVisualStyleBackColor = true;
+            this.buttonSpaceFilterLaplacian.Enabled = false;
+            this.buttonSpaceFilterLaplacian.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSpaceFilterLaplacian.Location = new System.Drawing.Point(87, 50);
+            this.buttonSpaceFilterLaplacian.Name = "buttonSpaceFilterLaplacian";
+            this.buttonSpaceFilterLaplacian.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpaceFilterLaplacian.TabIndex = 3;
+            this.buttonSpaceFilterLaplacian.Text = "Laplacian";
+            this.buttonSpaceFilterLaplacian.UseVisualStyleBackColor = true;
             // 
-            // buttonSpaceFillerSobel
+            // buttonSpaceFilterSobel
             // 
-            this.buttonSpaceFillerSobel.Enabled = false;
-            this.buttonSpaceFillerSobel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSpaceFillerSobel.Location = new System.Drawing.Point(6, 50);
-            this.buttonSpaceFillerSobel.Name = "buttonSpaceFillerSobel";
-            this.buttonSpaceFillerSobel.Size = new System.Drawing.Size(75, 23);
-            this.buttonSpaceFillerSobel.TabIndex = 2;
-            this.buttonSpaceFillerSobel.Text = "Sobel";
-            this.buttonSpaceFillerSobel.UseVisualStyleBackColor = true;
+            this.buttonSpaceFilterSobel.Enabled = false;
+            this.buttonSpaceFilterSobel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSpaceFilterSobel.Location = new System.Drawing.Point(6, 50);
+            this.buttonSpaceFilterSobel.Name = "buttonSpaceFilterSobel";
+            this.buttonSpaceFilterSobel.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpaceFilterSobel.TabIndex = 2;
+            this.buttonSpaceFilterSobel.Text = "Sobel";
+            this.buttonSpaceFilterSobel.UseVisualStyleBackColor = true;
             // 
-            // buttonSpaceFillerMean
+            // buttonSpaceFilterMean
             // 
-            this.buttonSpaceFillerMean.Enabled = false;
-            this.buttonSpaceFillerMean.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSpaceFillerMean.Location = new System.Drawing.Point(87, 21);
-            this.buttonSpaceFillerMean.Name = "buttonSpaceFillerMean";
-            this.buttonSpaceFillerMean.Size = new System.Drawing.Size(75, 23);
-            this.buttonSpaceFillerMean.TabIndex = 1;
-            this.buttonSpaceFillerMean.Text = "Mean";
-            this.buttonSpaceFillerMean.UseVisualStyleBackColor = true;
+            this.buttonSpaceFilterMean.Location = new System.Drawing.Point(87, 21);
+            this.buttonSpaceFilterMean.Name = "buttonSpaceFilterMean";
+            this.buttonSpaceFilterMean.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpaceFilterMean.TabIndex = 1;
+            this.buttonSpaceFilterMean.Text = "Mean";
+            this.buttonSpaceFilterMean.UseVisualStyleBackColor = true;
+            this.buttonSpaceFilterMean.Click += new System.EventHandler(this.buttonSpaceFillerMean_Click);
             // 
-            // buttonSpaceFillerMedium
+            // buttonSpaceFilterMedium
             // 
-            this.buttonSpaceFillerMedium.Enabled = false;
-            this.buttonSpaceFillerMedium.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSpaceFillerMedium.Location = new System.Drawing.Point(6, 21);
-            this.buttonSpaceFillerMedium.Name = "buttonSpaceFillerMedium";
-            this.buttonSpaceFillerMedium.Size = new System.Drawing.Size(75, 23);
-            this.buttonSpaceFillerMedium.TabIndex = 0;
-            this.buttonSpaceFillerMedium.Text = "Medium";
-            this.buttonSpaceFillerMedium.UseVisualStyleBackColor = true;
+            this.buttonSpaceFilterMedium.Location = new System.Drawing.Point(6, 21);
+            this.buttonSpaceFilterMedium.Name = "buttonSpaceFilterMedium";
+            this.buttonSpaceFilterMedium.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpaceFilterMedium.TabIndex = 0;
+            this.buttonSpaceFilterMedium.Text = "Median";
+            this.buttonSpaceFilterMedium.UseVisualStyleBackColor = true;
+            this.buttonSpaceFilterMedium.Click += new System.EventHandler(this.buttonSpaceFillerMedium_Click);
             // 
             // panel2
             // 
@@ -1130,6 +1132,26 @@
             this.timerEnableControl.Enabled = true;
             this.timerEnableControl.Tick += new System.EventHandler(this.timerEnableControl_Tick);
             // 
+            // buttonSpaceFilterMin
+            // 
+            this.buttonSpaceFilterMin.Location = new System.Drawing.Point(168, 21);
+            this.buttonSpaceFilterMin.Name = "buttonSpaceFilterMin";
+            this.buttonSpaceFilterMin.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpaceFilterMin.TabIndex = 5;
+            this.buttonSpaceFilterMin.Text = "Min";
+            this.buttonSpaceFilterMin.UseVisualStyleBackColor = true;
+            this.buttonSpaceFilterMin.Click += new System.EventHandler(this.buttonSpaceFilterMin_Click);
+            // 
+            // buttonSpaceFilterMax
+            // 
+            this.buttonSpaceFilterMax.Location = new System.Drawing.Point(249, 21);
+            this.buttonSpaceFilterMax.Name = "buttonSpaceFilterMax";
+            this.buttonSpaceFilterMax.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpaceFilterMax.TabIndex = 6;
+            this.buttonSpaceFilterMax.Text = "Max";
+            this.buttonSpaceFilterMax.UseVisualStyleBackColor = true;
+            this.buttonSpaceFilterMax.Click += new System.EventHandler(this.buttonSpaceFilterMax_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1178,7 +1200,7 @@
             this.panel4.ResumeLayout(false);
             this.groupBoxMorphology.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.groupBoxSpaceFiller.ResumeLayout(false);
+            this.groupBoxSpaceFilter.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBoxContrast.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1233,12 +1255,12 @@
         private System.Windows.Forms.Button buttonContrastLogarithmic;
         private System.Windows.Forms.Button buttonContrastNegative;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.GroupBox groupBoxSpaceFiller;
-        private System.Windows.Forms.Button buttonSpaceFillerKirsch;
-        private System.Windows.Forms.Button buttonSpaceFillerLaplacian;
-        private System.Windows.Forms.Button buttonSpaceFillerSobel;
-        private System.Windows.Forms.Button buttonSpaceFillerMean;
-        private System.Windows.Forms.Button buttonSpaceFillerMedium;
+        private System.Windows.Forms.GroupBox groupBoxSpaceFilter;
+        private System.Windows.Forms.Button buttonSpaceFilterKirsch;
+        private System.Windows.Forms.Button buttonSpaceFilterLaplacian;
+        private System.Windows.Forms.Button buttonSpaceFilterSobel;
+        private System.Windows.Forms.Button buttonSpaceFilterMean;
+        private System.Windows.Forms.Button buttonSpaceFilterMedium;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBoxMorphology;
         private System.Windows.Forms.Button buttonMorphologyOpening;
@@ -1286,6 +1308,8 @@
         private System.Windows.Forms.Label labelOutR;
         private System.Windows.Forms.Timer timerEnableControl;
         private System.Windows.Forms.Button buttonPowerLaw;
+        private System.Windows.Forms.Button buttonSpaceFilterMax;
+        private System.Windows.Forms.Button buttonSpaceFilterMin;
     }
 }
 

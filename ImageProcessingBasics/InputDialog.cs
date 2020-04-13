@@ -16,9 +16,16 @@ namespace ImageProcessingBasics
         {
             InitializeComponent();
             DialogResult = DialogResult.Cancel;
+            textBox.Multiline = false;
         }
 
-        public Type Type { get; set; }
+        public InputDialog(bool multiline) {
+            InitializeComponent();
+            DialogResult = DialogResult.Cancel;
+            textBox.Multiline = multiline;
+        }
+
+        public Type Type { get; set; } 
         public object Result { get; private set; }
         
 
@@ -57,6 +64,10 @@ namespace ImageProcessingBasics
             {
                 buttonOK.PerformClick();
             }
+        }
+
+        private void InputDialog_Load(object sender, EventArgs e) {
+            this.Size = new Size(this.Size.Width, textBox.Location.Y + textBox.Height + 40);
         }
     }
 }

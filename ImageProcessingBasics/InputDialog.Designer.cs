@@ -35,7 +35,7 @@
             // buttonOK
             // 
             this.buttonOK.Enabled = false;
-            this.buttonOK.Location = new System.Drawing.Point(87, 40);
+            this.buttonOK.Location = new System.Drawing.Point(82, 12);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 1;
@@ -45,9 +45,10 @@
             // 
             // textBox
             // 
-            this.textBox.Location = new System.Drawing.Point(12, 12);
+            this.textBox.Location = new System.Drawing.Point(12, 41);
+            this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(150, 22);
+            this.textBox.Size = new System.Drawing.Size(145, 94);
             this.textBox.TabIndex = 2;
             this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.textBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyUp);
@@ -56,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(171, 72);
+            this.ClientSize = new System.Drawing.Size(169, 147);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.buttonOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -65,6 +66,7 @@
             this.Name = "InputDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "InputDialog";
+            this.Load += new System.EventHandler(this.InputDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
